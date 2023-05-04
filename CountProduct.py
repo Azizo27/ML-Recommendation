@@ -3,6 +3,40 @@ import matplotlib.pyplot as plt
 import itertools
 
 
+def CountProducts(df):
+    
+    products = [col for col in df.columns if col.startswith("product_")]
+    
+    df['date'] = pd.to_datetime(df['date'])
+    
+    df['year'] = df['date'].dt.year
+    df['month'] = df['date'].dt.month
+    
+    #IF THE dfFRAME IS NOT ORDERED BY DATE:
+    # df = df.sort_values(by='date')
+    
+    print("Grouping by year, month and customer code...")
+    grouped_df = df.groupby(['year', 'month', 'customer_code']).sum().reset_index()
+    
+    print("Computing differences...")
+    grouped_df.sort_values(by=['customer_code', 'year', 'month'], inplace=True)
+    grouped_df.set_index(['year', 'month', 'customer_code'], inplace=True)
+    
+    print("Calculating buys and cancels...")
+    buyed_df = grouped_df.groupby(level='customer_code').diff().reset_index()
+    cancelled_df = grouped_df.groupby(level='customer_code').diff().reset_index()
+    
+    print("Counting buys and cancels...")
+    buyed_df[products] = buyed_df[products].applymap(lambda x: 1 if x == 1 else 0)
+    cancelled_df[products] = cancelled_df[products].applymap(lambda x: 1 if x == -1 else 0)
+    
+    print("Grouping by year and month, and counting the product purchase...")
+    monthly_added_counts = buyed_df.groupby(['year', 'month'])[products].sum().reset_index()
+    monthly_cancelled_counts = cancelled_df.groupby(['year', 'month'])[products].sum().reset_index()
+    
+    print("Done!")
+    return monthly_added_counts, monthly_cancelled_counts
+
 
 def BarPlotForCountProducts(df):
     
@@ -48,41 +82,6 @@ def BarPlotForCountProducts(df):
         print(f"\nTop products for {month.strftime('%B %Y')}:")
         for i, product in enumerate(top_products.index):
             print(f"{i+1}. {product}: {top_products[product]}")
-
-
-def CountProducts(df):
-    
-    products = [col for col in df.columns if col.startswith("product_")]
-    
-    df['date'] = pd.to_datetime(df['date'])
-    
-    df['year'] = df['date'].dt.year
-    df['month'] = df['date'].dt.month
-    
-    #IF THE dfFRAME IS NOT ORDERED BY DATE:
-    # df = df.sort_values(by='date')
-    
-    print("Grouping by year, month and customer code...")
-    grouped_df = df.groupby(['year', 'month', 'customer_code']).sum().reset_index()
-    
-    print("Computing differences...")
-    grouped_df.sort_values(by=['customer_code', 'year', 'month'], inplace=True)
-    grouped_df.set_index(['year', 'month', 'customer_code'], inplace=True)
-    
-    print("Calculating buys and cancels...")
-    buyed_df = grouped_df.groupby(level='customer_code').diff().reset_index()
-    cancelled_df = grouped_df.groupby(level='customer_code').diff().reset_index()
-    
-    print("Counting buys and cancels...")
-    buyed_df[products] = buyed_df[products].applymap(lambda x: 1 if x == 1 else 0)
-    cancelled_df[products] = cancelled_df[products].applymap(lambda x: 1 if x == -1 else 0)
-    
-    print("Grouping by year and month, and counting the product purchase...")
-    monthly_added_counts = buyed_df.groupby(['year', 'month'])[products].sum().reset_index()
-    monthly_cancelled_counts = cancelled_df.groupby(['year', 'month'])[products].sum().reset_index()
-    
-    print("Done!")
-    return monthly_added_counts, monthly_cancelled_counts
 
 
 def LinearPlotForCountProducts(df):

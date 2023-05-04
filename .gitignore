@@ -1,2 +1,3 @@
-CsvFiles/
 *.csv
+Infos/
+__pycache__/

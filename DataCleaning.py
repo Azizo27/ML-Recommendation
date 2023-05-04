@@ -102,12 +102,18 @@ def DisplayInformation(df):
 #We send a chunk of data to this function, and it cleans it.
 def CleaningData(df):
     
+    print("Cleaning Date...")
+    df["date"] = pd.to_datetime(df["date"],format="%Y-%m-%d")
+    
+    print("Nothing To Clean In Customer Code...")
+    
     print("Cleaning Employee Index...")
     df.dropna(subset=['employee_index'], inplace=True)
     
-    print("Cleaning Country Residence...")
+    print("Nothing To Clean In Country Residence...")
     
     print("Cleaning Gender...")
+    df.dropna(subset=['employee_index'], inplace=True)
     
     print("Cleaning Age...")
     
@@ -152,7 +158,7 @@ def CleaningData(df):
     
     print("Cleaning All Products...")
     
-    df["date"] = pd.to_datetime(df["date"],format="%Y-%m-%d")
+    
     df['age'] = pd.to_numeric(df['age'], errors='coerce')
     df["customer_start_date"] = pd.to_datetime(df["customer_start_date"],format="%Y-%m-%d")
     df["last_date_as_primary_customer"] = pd.to_datetime(df["last_date_as_primary_customer"],format="%Y-%m-%d")
@@ -162,9 +168,3 @@ def CleaningData(df):
                                                                                                '4.0': '4', 4.0: '4'})
     
     return df
-    
-
-print("Importing libraries...")
-df = LoadCsv("CsvFiles/CountDataset.csv", "Renamed_train_ver2.csv")
-df.dropna(subset=['employee_index'], inplace=True)
-DisplayInformation(df)
