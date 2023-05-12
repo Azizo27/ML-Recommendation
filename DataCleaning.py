@@ -1,8 +1,28 @@
 import pandas as pd
 import numpy as np
-import time
-from IncomePrediction import predict_income
-from NeuralNetworkIncome import NeuralNetworkGrossIncome
+import random
+from SegmentationPrediction import predict_segmentation
+
+def Init_csv(file_name, small_file_name,  nrows):
+    # Count the total number of rows in the large .csv file
+    total_rows = sum(1 for _ in open(file_name)) - 1  # subtract 1 to exclude the header row
+    sample_indices = random.sample(range(1, total_rows + 1), nrows)  # add 1 to include the header row
+
+    print("Writing the header row to the small .csv file...")
+    # Write the header row to the small .csv file
+    with open(small_file_name, 'w') as f:
+        with open(file_name) as f_large:
+            header = f_large.readline().replace('"', '')
+            f.write(header)
+
+    print("Writing the randomly selected rows to the small .csv file...")
+    # Read and append only the randomly sampled rows to the small .csv file
+    with open(small_file_name, 'a') as f:
+        with open(file_name) as f_large:
+            for i, line in enumerate(f_large):
+                if i + 1 in sample_indices:
+                    f.write(line)
+
 
 #This function loads the data ENTIRELY from a csv. Also, It can be filtered by date May/June. Also, It can copy to a new csv file by renaming the columns
 def LoadCsv(file_name, new_file_name):
@@ -13,7 +33,7 @@ def LoadCsv(file_name, new_file_name):
     for chunk in pd.read_csv(file_name, low_memory=False, chunksize=chunksize):
         '''
         #TO FILTER BY DATE (NB: YOU MUST DELETE THE NEXT LINE)
-        filtered_chunk = chunk[chunk['fecha_dato'].astype(str).str.startswith(('2015-05', '2015-06'))]
+        filtered_chunk = chunk[chunk['fecha_dato'].astype(str).str.startswith(('2015-06'))]
         chunks.append(filtered_chunk)
         '''
         chunks.append(chunk)
@@ -21,15 +41,13 @@ def LoadCsv(file_name, new_file_name):
     print("Data loaded. Concatenating chunks...")
     df = pd.concat(chunks, ignore_index=True)
     
-    '''
     #TO RENAME THE COLUMNS, CLEANS DATA AND SAVE TO A NEW CSV FILE
     print("Renaming columns...")
     df = RenameColumns(df)
-    #print("Cleaning data...")
-    #df = CleaningData(df)
+    print("Cleaning data...")
+    df = CleaningData(df)
     print("Saving to a new csv file...")
     df.to_csv(new_file_name, index=False)
-    '''
     
     return df
 
@@ -101,7 +119,7 @@ def DisplayInformation(df):
 
 
 #This function cleans the data.
-#NB: I added "U" for Unknown to fill some null columns
+#NB: I added "U", "UKN" or "UKNOWN" for Unknown to fill some null columns
 def CleaningData(df):
     
     print("Cleaning Date...")
@@ -126,7 +144,7 @@ def CleaningData(df):
     df["age"] = np.where(df["age"] < 0, 0, df["age"])
     
     print("Cleaning Customer Start Date...")
-    # NB: How to fill the null values in this column?
+    # NB: There is no Null values in this column But I fill it in case of
     df["customer_start_date"].fillna(pd.NaT, inplace=True)
     df["customer_start_date"] = pd.to_datetime(df["customer_start_date"],format="%Y-%m-%d")
     
@@ -134,7 +152,7 @@ def CleaningData(df):
     #NB: At this step, There is no null values in this column 
     # but I  do a fillna just in case.
     df['new_customer_index'].fillna(0, inplace=True)
-    df['new_customer_index'].astype(int, inplace=True)
+    df['new_customer_index'] = df['new_customer_index'].astype(int)
     
     print("Cleaning Customer Seniority...")
     df['customer_seniority'] = pd.to_numeric(df['customer_seniority'], errors='coerce')
@@ -144,11 +162,11 @@ def CleaningData(df):
     
     print("Cleaning Primary Customer Index...")
     # NB: Even If there is no null values, How to fill the null values in this column? (probably put it at 0)
-    df['primary_customer_index'].astype(int, inplace=True)
+    df['primary_customer_index'] = df['primary_customer_index'].astype(int)
     
     
     print("Cleaning Last Date as Primary Customer ...")
-    # NB: How to fill the null values in this column?
+    # NB: We will not use this column in our model
     df["last_date_as_primary_customer"].fillna(pd.NaT, inplace=True)
     df["last_date_as_primary_customer"] = pd.to_datetime(df["last_date_as_primary_customer"],format="%Y-%m-%d")
     
@@ -168,7 +186,7 @@ def CleaningData(df):
     
     print("Cleaning Foreigner Index...")
     
-    print("Cleaning Spouse Index !!!")
+    print("Cleaning Spouse Index...")
     #NB: In the original instruction, Spouse Index should be equal to 1 if the customer is spouse of an employee. 
     #    However, this column only have N/S values, for No and Si (Yes in Spanish).
     df['spouse_index'].fillna('N', inplace=True)
@@ -180,19 +198,21 @@ def CleaningData(df):
     
     print("Cleaning Address Type...")
     df['address_type'].fillna(0, inplace=True)
+    df['address_type'] = df['address_type'].astype(int)
     
     print("Cleaning Province Code...")
     df['province_code'].fillna(99, inplace=True)
+    df['province_code'] = df['province_code'].astype(int)
     
     print("Cleaning Province Name...")
-    df['province_name'].str.replace(',', '', inplace=True)
-    df['province_name'].fillna('UNK', inplace=True)
+    df['province_name'] = df['province_name'].str.replace(',', '')
+    df['province_name'].fillna('UNKNOWN', inplace=True)
     
     print("Cleaning Activity Index...")
     #NB: At this step, There is no null values in this column. 
     # All of it is equal to 1 but I do a fillna just in case
     df['activity_index'].fillna(0, inplace=True)
-    df['activity_index'].astype(int, inplace=True)
+    df['activity_index'] = df['activity_index'].astype(int)
     
     print("Cleaning Gross Income...")
     #NB: Maybe do some supervised learning to fill the null values
@@ -201,17 +221,18 @@ def CleaningData(df):
                                   if pd.isnull(row['gross_income']) else row['gross_income'], axis=1)
     
     print("Cleaning Segmentation...")
-    #NB: How to Fill the null values in this column?
+    df = predict_segmentation(df)
     
     print("Cleaning All Products...")
-    df[[col for col in df.columns if col.startswith('product_')]].fillna(0, inplace=True)
-    df[[col for col in df.columns if col.startswith('product_')]].astype(int, inplace=True)
+    products_name = [col for col in df.columns if col.startswith('product_')]
+    df.loc[:, products_name] = df.loc[:, products_name].fillna(0)
+    df['product_payroll'] = df['product_payroll'].astype(int)
+    df['product_second_pensions'] = df['product_second_pensions'].astype(int)
     
-    print("Done Cleaning Data !!")
+    print("Data Cleaning Done !")
+    
     return df
 
 
-
-#TRY GOOGLE COLAB
-df = LoadCsv("Renamed_train_ver2.csv", "train.csv")
+df = LoadCsv("train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
 DisplayInformation(df)
