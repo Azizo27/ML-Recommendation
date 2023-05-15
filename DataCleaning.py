@@ -41,6 +41,7 @@ def LoadCsv(file_name, new_file_name):
     print("Data loaded. Concatenating chunks...")
     df = pd.concat(chunks, ignore_index=True)
     
+    '''
     #TO RENAME THE COLUMNS, CLEANS DATA AND SAVE TO A NEW CSV FILE
     print("Renaming columns...")
     df = RenameColumns(df)
@@ -48,6 +49,7 @@ def LoadCsv(file_name, new_file_name):
     df = CleaningData(df)
     print("Saving to a new csv file...")
     df.to_csv(new_file_name, index=False)
+    '''
     
     return df
 
@@ -232,7 +234,3 @@ def CleaningData(df):
     print("Data Cleaning Done !")
     
     return df
-
-
-df = LoadCsv("train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
-DisplayInformation(df)

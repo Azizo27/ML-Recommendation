@@ -11,7 +11,7 @@ data = LoadCsv("Cleaned_Renamed_JuneOnly.csv", "Cleaned_Renamed_smalltest_ver2.c
 print("Starting...")
 target = "product_credit_card"
 product_to_drop = [col for col in data.columns if col.startswith('product_') and not col == target]
-feature_to_drop = ["customer_code", "customer_start_date", "last_date_as_primary_customer", "segmentation", "gross_income"]
+feature_to_drop = ["date", "customer_code", "last_date_as_primary_customer", "province_name", "province_code", "segmentation", "customer_start_date", "channel_used_by_customer_to_join"]
 data = data.drop(columns=product_to_drop)
 data = data.drop(columns=feature_to_drop)
 
