@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 from SegmentationPrediction import predict_segmentation
+import os
 
 def Init_csv(file_name, small_file_name,  nrows):
     # Count the total number of rows in the large .csv file
@@ -41,15 +42,13 @@ def LoadCsv(file_name, new_file_name):
     print("Data loaded. Concatenating chunks...")
     df = pd.concat(chunks, ignore_index=True)
     
-    '''
-    #TO RENAME THE COLUMNS, CLEANS DATA AND SAVE TO A NEW CSV FILE
-    print("Renaming columns...")
-    df = RenameColumns(df)
-    print("Cleaning data...")
-    df = CleaningData(df)
-    print("Saving to a new csv file...")
-    df.to_csv(new_file_name, index=False)
-    '''
+    if not os.path.exists(new_file_name):
+        print("Renaming columns...")
+        df = RenameColumns(df)
+        print("Cleaning data...")
+        df = CleaningData(df)
+        print("Saving to a new csv file...")
+        df.to_csv(new_file_name, index=False)
     
     return df
 

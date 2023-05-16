@@ -6,16 +6,13 @@ import numpy as np
 from DataCleaning import LoadCsv, DisplayInformation
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import pickle
+import os
 
 # Load dataset
-def PredictionProduct(df, target):
+def CreatingModelProduct(df, model_file_name, features, target):
     print("Starting...")
-    product_to_drop = [col for col in df.columns if col.startswith('product_') and not col == target]
-    feature_to_drop = ["date", "customer_code", "last_date_as_primary_customer", "province_name", "province_code", 
-                       "customer_start_date", "channel_used_by_customer_to_join", "country_residence", "spouse_index",
-                       "deceased_index", "employee_index", "address_type", "foreigner_index", "primary_customer_index", "new_customer_index"]
-    data = df.drop(columns=product_to_drop)
-    data = data.drop(columns=feature_to_drop)
+    data = df[features + [target]]
 
     # Split data into numeric features and target
     print("Splitting Numerical and Categorical Features...")
@@ -53,11 +50,16 @@ def PredictionProduct(df, target):
     accuracy = accuracy_score(y_test, y_pred)
     print("Accuracy:", accuracy)
     
-    # Use predict_proba to get the probability
+    '''
+    print("Saving the trained model to a file...")
+    pickle.dump(model, open(model_file_name,'wb'))
+    '''
     
     print("Predicting probability of test for being buyed...")
+    # Use predict_proba to get the probability
     probabilities = model.predict_proba(X_test)
     df2 = pd.DataFrame(data=X_test, columns=[f'feature_{i}' for i in range(X_test.shape[1])])
+    
     
     # SHOULD ALWAYS BE > 1 BECAUSE IF NOT, IT MEANS THAT THE ACCURACY IS 100% AND THIS IS NOT POSSIBLE WITH A BIG DATASET 
     # (Because It would mean that in the entire dataset, there is not a single client who bought the product)
@@ -69,13 +71,42 @@ def PredictionProduct(df, target):
         df2['probability_buyed'] = 1 - probabilities[:, 0]
     
     
-    df_non_zero = df2[df2['probability_buyed'] >  0.5]
+    df_non_zero = df2[df2['probability_buyed'] > 0.1]
     print(df_non_zero)
 
+def PredictProbabilityProduct(dfToPredict, model_file_name, features, target):
+    
+    dfToPredict = dfToPredict[features]
+    #If the model does not exist, create it
+    if not os.path.exists(model_file_name):
+        df = LoadCsv("Cleaned_Renamed_smalltrain_ver2.csv", "Cleaned_Renamed_smalltrain_ver2.csv")
+        CreatingModelProduct(df, model_file_name, features, target)
+    
+    print("Loading model...")
+    model = pickle.load(open(model_file_name,'rb'))
+    print("Predicting probability of test for being buyed...")
+    # Use predict_proba to get the probability
+    probabilities = model.predict_proba(dfToPredict)
+    df2 = pd.DataFrame(data=dfToPredict, columns=[f'feature_{i}' for i in range(dfToPredict.shape[1])])
+    
+    
+    # SHOULD ALWAYS BE > 1 BECAUSE IF NOT, IT MEANS THAT THE ACCURACY IS 100% AND THIS IS NOT POSSIBLE WITH A BIG DATASET 
+    # (Because It would mean that in the entire dataset, there is not a single client who bought the product)
+    if probabilities.shape[1] > 1:
+        df2['probability_buyed'] = probabilities[:, 1]
+    else:
+        # If there is only one column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
+        #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
+        df2['probability_buyed'] = 1 - probabilities[:, 0]
+    
+    
+    df_non_zero = df2[df2['probability_buyed'] > 0.1]
+    print(df_non_zero)
+    
+    return 0
 
-df = LoadCsv("Cleaned_Renamed_smalltrain_ver2.csv", "Cleaned_Renamed_smalltest_ver2.csv")
+df = LoadCsv("Cleaned_Renamed_biggertrain_ver2.csv", "Cleaned_Renamed_smalltest_ver2.csv")
 all_products=  [col for col in df.columns if col.startswith('product_')]
-
 for product in all_products:
     PredictionProduct(df, product)
     print("Done with", product)
