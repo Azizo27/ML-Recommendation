@@ -12,7 +12,7 @@ import os
 # Load dataset
 def CreatingModelProduct(df, model_file_name, features, target):
     print("Starting...")
-    data = df[features + [target]]
+    data = df[features + [target]].copy()
 
     # Split data into numeric features and target
     print("Splitting Numerical and Categorical Features...")
@@ -58,55 +58,55 @@ def CreatingModelProduct(df, model_file_name, features, target):
     print("Predicting probability of test for being buyed...")
     # Use predict_proba to get the probability
     probabilities = model.predict_proba(X_test)
-    df2 = pd.DataFrame(data=X_test, columns=[f'feature_{i}' for i in range(X_test.shape[1])])
-    
     
     # SHOULD ALWAYS BE > 1 BECAUSE IF NOT, IT MEANS THAT THE ACCURACY IS 100% AND THIS IS NOT POSSIBLE WITH A BIG DATASET 
     # (Because It would mean that in the entire dataset, there is not a single client who bought the product)
     if probabilities.shape[1] > 1:
-        df2['probability_buyed'] = probabilities[:, 1]
+        X_test[target] = probabilities[:, 1]
     else:
         # If there is only one column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
         #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
-        df2['probability_buyed'] = 1 - probabilities[:, 0]
+        X_test[target] = 1 - probabilities[:, 0]
     
     
-    df_non_zero = df2[df2['probability_buyed'] > 0.1]
+    df_non_zero = X_test[X_test[target] > 0.05]
     print(df_non_zero)
 
 def PredictProbabilityProduct(dfToPredict, model_file_name, features, target):
     
-    dfToPredict = dfToPredict[features]
+    dataToPredict = dfToPredict[features]
     #If the model does not exist, create it
     if not os.path.exists(model_file_name):
         df = LoadCsv("Cleaned_Renamed_smalltrain_ver2.csv", "Cleaned_Renamed_smalltrain_ver2.csv")
         CreatingModelProduct(df, model_file_name, features, target)
     
     print("Loading model...")
+
     model = pickle.load(open(model_file_name,'rb'))
     print("Predicting probability of test for being buyed...")
     # Use predict_proba to get the probability
-    probabilities = model.predict_proba(dfToPredict)
-    df2 = pd.DataFrame(data=dfToPredict, columns=[f'feature_{i}' for i in range(dfToPredict.shape[1])])
+    probabilities = model.predict_proba(dataToPredict)
     
     
     # SHOULD ALWAYS BE > 1 BECAUSE IF NOT, IT MEANS THAT THE ACCURACY IS 100% AND THIS IS NOT POSSIBLE WITH A BIG DATASET 
     # (Because It would mean that in the entire dataset, there is not a single client who bought the product)
     if probabilities.shape[1] > 1:
-        df2['probability_buyed'] = probabilities[:, 1]
+        dataToPredict[target] = probabilities[:, 1]
     else:
         # If there is only one column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
         #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
-        df2['probability_buyed'] = 1 - probabilities[:, 0]
+        dataToPredict[target] = 1 - probabilities[:, 0]
     
     
-    df_non_zero = df2[df2['probability_buyed'] > 0.1]
+    df_non_zero = dataToPredict[dataToPredict[target] > 0.05]
     print(df_non_zero)
     
     return 0
 
-df = LoadCsv("Cleaned_Renamed_biggertrain_ver2.csv", "Cleaned_Renamed_smalltest_ver2.csv")
+df = LoadCsv("Cleaned_Renamed_biggertrain_ver2.csv", "Cleaned_Renamed_biggertrain_ver2.csv")
+features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
 all_products=  [col for col in df.columns if col.startswith('product_')]
-for product in all_products:
-    PredictionProduct(df, product)
-    print("Done with", product)
+for target in all_products:
+    model_file_name = 'model_' + target + '.pkl'
+    CreatingModelProduct(df,model_file_name, features, target)
+    print("Done with", target)

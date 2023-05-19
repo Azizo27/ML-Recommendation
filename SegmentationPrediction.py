@@ -16,7 +16,7 @@ def predict_segmentation(df):
     else:
         print('Preprocessing the data...')
         selected_columns = features + [target]
-        data = df[df[target].notnull()][selected_columns]
+        data = df[df[target].notnull()][selected_columns].copy()
         
         print('Removing the target variable...')
         X = data.drop(columns=[target])

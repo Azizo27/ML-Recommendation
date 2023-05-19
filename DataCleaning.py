@@ -49,7 +49,7 @@ def LoadCsv(file_name, new_file_name):
         df = CleaningData(df)
         print("Saving to a new csv file...")
         df.to_csv(new_file_name, index=False)
-    
+        
     return df
 
 #This function renames the columns of the data
@@ -215,12 +215,6 @@ def CleaningData(df):
     df['activity_index'].fillna(0, inplace=True)
     df['activity_index'] = df['activity_index'].astype(int)
     
-    print("Cleaning Gross Income...")
-    #NB: Maybe do some supervised learning to fill the null values
-    median_by_province = df.groupby('province_code')['gross_income'].median()
-    df['gross_income'] = df.apply( lambda row: median_by_province[row['province_code']] 
-                                  if pd.isnull(row['gross_income']) else row['gross_income'], axis=1)
-    
     print("Cleaning Segmentation...")
     df = predict_segmentation(df)
     
@@ -229,6 +223,16 @@ def CleaningData(df):
     df.loc[:, products_name] = df.loc[:, products_name].fillna(0)
     df['product_payroll'] = df['product_payroll'].astype(int)
     df['product_second_pensions'] = df['product_second_pensions'].astype(int)
+    
+    '''
+    print("Cleaning Gross Income...")
+    #NB: Maybe do some supervised learning to fill the null values
+    median_by_province = df.groupby('province_code')['gross_income'].median()
+    df['gross_income'] = df.apply( lambda row: median_by_province[row['province_code']] 
+                                  if pd.isnull(row['gross_income']) else row['gross_income'], axis=1)
+    '''
+    print("Cleaning Gross Income...")
+    
     
     print("Data Cleaning Done !")
     
