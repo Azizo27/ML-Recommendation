@@ -48,3 +48,19 @@ def replace_null_gross_income(df):
 
     return df
 
+
+
+def replace_null_gross_incomeUsingStartDate(df):
+    df['customer_start_date'] = pd.to_datetime(df['customer_start_date'])
+    df['customer_start_month'] = df['customer_start_date'].dt.to_period('M')
+    
+    df['median_income'] = df.groupby('customer_start_date')['gross_income'].transform('median')
+    df['median_income_month'] = df.groupby('customer_start_month')['gross_income'].transform('median')
+    
+    df['mean_income'] = df.groupby('customer_start_date')['gross_income'].transform('mean')
+    df['mean_income_month'] = df.groupby('customer_start_month')['gross_income'].transform('mean')
+
+    # Print the updated DataFrame
+    print(df[['date', 'customer_start_date', 'gross_income', 'median_income', 'median_income_month','mean_income', 'mean_income_month']].head(10))
+    return df
+

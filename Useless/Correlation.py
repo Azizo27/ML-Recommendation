@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy as np
 from DataCleaning import LoadCsv
-from IncomeCleaning import replace_null_gross_income
+from IncomeCleaning import *
 from IncomePrediction import predict_income
 
 
@@ -47,14 +47,14 @@ def select_featuresVER2NUMERICALONLY(data, target, threshold):
 
 data = LoadCsv("Cleaned_Renamed_biggertrain_ver2_WithoutIncome.csv", "Cleaned_Renamed_biggertrain_ver2_WithoutIncome.csv")
 
-data = replace_null_gross_income(data)
+data = replace_null_gross_incomeUsingStartDate(data)
 
 print("Starting...")
 # Specify the target variable name
 target_variable = "gross_income"
 
 # Set the threshold for feature selection
-correlation_threshold = 0.4
+correlation_threshold = 0.3
 
 '''
 # Call the function to select the pertinent features

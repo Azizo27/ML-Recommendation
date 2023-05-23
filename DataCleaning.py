@@ -166,10 +166,14 @@ def CleaningData(df):
     df['primary_customer_index'] = df['primary_customer_index'].astype(int)
     
     
-    print("Cleaning Last Date as Primary Customer ...")
+    print("Cleaning Last Date as Primary Customer (Deleting the column) ...")
+    '''
     # NB: We will not use this column in our model
     df["last_date_as_primary_customer"].fillna(pd.NaT, inplace=True)
     df["last_date_as_primary_customer"] = pd.to_datetime(df["last_date_as_primary_customer"],format="%Y-%m-%d")
+    '''
+    # I will drop this column because it is useless for our model
+    df = df.drop('last_date_as_primary_customer', axis=1)
     
     
     print("Cleaning Customer Type at Beginning of Month...")
@@ -218,22 +222,21 @@ def CleaningData(df):
     print("Cleaning Segmentation...")
     df = predict_segmentation(df)
     
+    print("Cleaning Gross Income...")
+    #At the end, I decided to drop all the rows with null values in this column
+    df.dropna(subset=['gross_income'], inplace=True)
+    
+    
     print("Cleaning All Products...")
     products_name = [col for col in df.columns if col.startswith('product_')]
     df.loc[:, products_name] = df.loc[:, products_name].fillna(0)
     df['product_payroll'] = df['product_payroll'].astype(int)
     df['product_second_pensions'] = df['product_second_pensions'].astype(int)
     
-    '''
-    print("Cleaning Gross Income...")
-    #NB: Maybe do some supervised learning to fill the null values
-    median_by_province = df.groupby('province_code')['gross_income'].median()
-    df['gross_income'] = df.apply( lambda row: median_by_province[row['province_code']] 
-                                  if pd.isnull(row['gross_income']) else row['gross_income'], axis=1)
-    '''
-    print("Cleaning Gross Income...")
-    
-    
     print("Data Cleaning Done !")
     
     return df
+
+
+df=LoadCsv("Cleaned_Renamed_train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
+DisplayInformation(df)

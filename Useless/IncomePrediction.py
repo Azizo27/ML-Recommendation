@@ -1,55 +1,58 @@
 import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+
 
 def predict_income(df):
 
-    print('Preprocessing the data...')
-    selected_columns = ['age', 'province_code', 'segmentation', 'gross_income']
-    data = df[df['gross_income'].notnull() & df['segmentation'].notnull()][selected_columns]
+    target = 'gross_income'
+    data = df[[ 'median_income', 'mean_income', target]].copy()
+    #data = df[df['gross_income'].notnull() & df['segmentation'].notnull()][selected_columns].copy()
+    
+    '''
+    # Split data into numeric features and target
+    print("Splitting Numerical and Categorical Features...")
+    numeric_cols = data.select_dtypes(include=[np.number]).columns.tolist()
+    X_numeric = data[numeric_cols]
 
-    # One-hot encoding categorical features
-    categorical_features = ['segmentation']
-    one_hot_encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
-    encoded_features = one_hot_encoder.fit_transform(data[categorical_features])
-    encoded_df = pd.DataFrame(encoded_features, columns=one_hot_encoder.get_feature_names_out(categorical_features), index=data.index)
+    # Convert non-numeric features to numeric using one-hot encoding
+    print("Converting...")
+    non_numeric_cols = data.select_dtypes(exclude=[np.number]).columns.tolist()
+    X_non_numeric = pd.get_dummies(data[non_numeric_cols])
 
-    # Merge encoded features with the rest of the data
-    data = data.drop(columns=categorical_features).join(encoded_df)
+    # Concatenate numeric and non-numeric features
+    print("Concatenating And Splitting...")
+    X = pd.concat([X_numeric, X_non_numeric], axis=1)
+    X = X.drop(target, axis=1)
+    y = data[target]
+    '''
+    # FOR ONLY NUMERICAL VALUE
+    X = data.drop(target, axis=1)
+    y = data[target]
 
-    print('Removing the target variable...')
-    X = data.drop(columns=['gross_income'])
-    y = data['gross_income']
 
-    print('Splitting the data into training and testing sets...')
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    print('Training the linear regression model...')
-    model = LinearRegression()
+    print('Training the model...')
+    model = RandomForestRegressor(n_estimators=100, random_state=0)
     model.fit(X_train, y_train)
 
     print('Making predictions on the test set...')
-    y_pred = model.predict(X_test)
+    predicted_income_test = model.predict(X_test)
+    
+    # Get feature importances and sort them in descending order
+    print("Importances of each features...")
+    importances = model.feature_importances_
+    sorted_indices = importances.argsort()[::-1]
+    
+    for idx in sorted_indices:
+        print(f"{X.columns[idx]}: {importances[idx]}")
 
-    print('Calculating the mean squared error...')
-    mse = r2_score(y_test, y_pred)
-    print(f'r2 score: {mse}')
+    print('Evaluating the model...')
+    r2 = r2_score(y_test, predicted_income_test)
+    print(f'R2 score: {r2}')
 
-    '''
-    print('Saving the trained model to a file...')
-    with open('gross_income_model.pkl', 'wb') as f:
-        pickle.dump(model, f)
-    '''
-
-    '''
-    # Load the saved model from the file
-    with open('gross_income_model.pkl', 'rb') as f:
-        loaded_model = pickle.load(f)
-
-    # Use the loaded model to make predictions
-    y_pred = loaded_model.predict(X_test)
-    '''
-
-
+    return df
