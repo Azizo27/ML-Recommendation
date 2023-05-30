@@ -49,29 +49,12 @@ def TransformDfToPredict(TrainFeaturesFile, DfToPredict):
     return dataToPredict
 
 
-# USELESS FUNCTION: Get feature names from a fitted model (NOT WORKING --> Get ['0', '1', '2'...])
-def get_fitted_feature_names(model_path):
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
-
-    if isinstance(model, dict):
-        feature_names = model['feature_names']
-    elif hasattr(model, 'estimators_') and len(model.estimators_) > 0:
-        # Assuming all trees in the forest have the same feature importances
-        importances = model.estimators_[0].feature_importances_
-        feature_names = np.arange(len(importances)).astype(str)
-    else:
-        raise ValueError("Could not find feature names in the model.")
-
-    return feature_names
-
-    
 # Load dataset
 def CreatingModelProduct(df, model_file_name, features, target):
     print("Starting...")
     
     X = EncodingAllFeatures(df[features])
-    with open('FittedFeatures.txt', 'w') as file:
+    with open('FittedFeaturesof'+target+'.txt', 'w') as file:
         column_names = X.columns.tolist()
         file.write(','.join(str(item) for item in column_names))
 
@@ -83,18 +66,7 @@ def CreatingModelProduct(df, model_file_name, features, target):
     print("Fitting...")
     model = RandomForestClassifier()
     model.fit(X_train, y_train)
-    
-    
-    
-    '''
-    # Get feature importances and sort them in descending order
-    print("Importances of each features...")
-    importances = model.feature_importances_
-    sorted_indices = importances.argsort()[::-1]
-    
-    for idx in sorted_indices:
-        print(f"{X.columns[idx]}: {importances[idx]}")
-    '''
+
 
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
@@ -103,48 +75,19 @@ def CreatingModelProduct(df, model_file_name, features, target):
     print("Saving the trained model to a file...")
     pickle.dump(model, open(model_file_name,'wb'))
     
-    
-    '''
-    print("Predicting probability of test for being buyed...")
-    # Use predict_proba to get the probability
-    probabilities = model.predict_proba(X_test)
-    
-    # SHOULD ALWAYS BE > 1 BECAUSE IF NOT, IT MEANS THAT THE ACCURACY IS 100% AND THIS IS NOT POSSIBLE WITH A BIG DATASET 
-    # (Because It would mean that in the entire dataset, there is not a single client who bought the product)
-    if probabilities.shape[1] > 1:
-        X_test[target] = probabilities[:, 1]
-    else:
-        # If there is only one column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
-        #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
-        X_test[target] = 1 - probabilities[:, 0]
-    
-    
-    #To get the customer_code
-    X_test["customer_code"] = df.loc[X_test.index, "customer_code"]
-    
-    
-    df_non_zero = X_test[X_test[target] > 0.02].copy()
-    if not df_non_zero.empty:
-        df_non_zero.loc[:, "prediction_target"] = model.predict(df_non_zero.drop(target, axis=1))
-        df_non_zero.loc[:, "real_target"] = y_test.loc[df_non_zero.index]
-    print(df_non_zero[["customer_code", target]])
-    
-    
-    print(X_test[["customer_code", target]])
-    '''
-
 def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, FileToCreateModel):
     
     #If the model does not exist, create it
-    if not os.path.exists(model_file_name):
+    if not os.path.exists(target):
+        print("Creating Subfolders for the target "+target +" ...")
+        os.makedirs(target)
         print("Model does not exist, creating it...")
         dfForTraining = LoadCsv(FileToCreateModel, FileToCreateModel)
         CreatingModelProduct(dfForTraining, model_file_name, features, target)
     
     print("Loading model "+model_file_name+ "...")
 
-    dataToPredict = TransformDfToPredict('FittedFeatures.txt', dfToPredict)
-    print("After Transform", dataToPredict.head(10))
+    dataToPredict = TransformDfToPredict('FittedFeaturesof'+target+'.txt', dfToPredict)
     model = pickle.load(open(model_file_name,'rb'))
     
     
@@ -180,18 +123,18 @@ def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, Fi
 dfTopredict = LoadCsv("Cleaned_Renamed_test_ver2.csv", "Cleaned_Renamed_test_ver2.csv")
 
 features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
-
-target="product_current_accounts"
-model_file_name = 'model_' + target + '.pkl'
 FileToCreateModel = "Cleaned_Renamed_smalltrain_ver2.csv"
 
-PredictProbabilityProduct(dfTopredict, features, target, model_file_name, FileToCreateModel)
+all_products=  [ "product_savings_account", "product_guarantees", "product_current_accounts",
+    "product_derivada_account", "product_payroll_account", "product_junior_account",
+    "product_mas_particular_account", "product_particular_account", "product_particular_plus_account",
+    "product_short_term_deposits", "product_medium_term_deposits", "product_long_term_deposits",
+    "product_e_account", "product_funds", "product_mortgage", "product_first_pensions",
+    "product_loans", "product_taxes", "product_credit_card", "product_securities",
+    "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
 
-'''
-all_products=  [col for col in df.columns if col.startswith('product_')]
+
 for target in all_products:
     model_file_name = 'model_' + target + '.pkl'
-    CreatingModelProduct(df,model_file_name, features, target)
+    PredictProbabilityProduct(dfTopredict, features, target, model_file_name, FileToCreateModel)
     print("Done with", target)
-
-'''

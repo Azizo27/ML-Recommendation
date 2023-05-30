@@ -3,3 +3,4 @@ Infos/
 __pycache__/
 *.pkl
 .vscode/
+.Useless/
