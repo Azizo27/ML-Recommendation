@@ -1,0 +1,1 @@
+age,gross_income,customer_seniority,customer_relation_type_at_beginning_of_month_A,customer_relation_type_at_beginning_of_month_I,customer_relation_type_at_beginning_of_month_U,segmentation_01 - TOP,segmentation_02 - PARTICULARES,segmentation_03 - UNIVERSITARIO,gender_H,gender_V

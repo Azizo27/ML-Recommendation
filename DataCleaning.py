@@ -224,19 +224,19 @@ def CleaningData(df):
     
     print("Cleaning Gross Income...")
     #At the end, I decided to drop all the rows with null values in this column
+    df['gross_income'] = df['gross_income'].str.replace(' ', '')
+    df['gross_income'] = pd.to_numeric(df['gross_income'], errors='coerce')
     df.dropna(subset=['gross_income'], inplace=True)
-    
-    
-    print("Cleaning All Products...")
+
     products_name = [col for col in df.columns if col.startswith('product_')]
-    df.loc[:, products_name] = df.loc[:, products_name].fillna(0)
-    df['product_payroll'] = df['product_payroll'].astype(int)
-    df['product_second_pensions'] = df['product_second_pensions'].astype(int)
+    
+    if len(products_name) != 0: # If there is products columns
+        print("Cleaning All Products...")
+        df.loc[:, products_name] = df.loc[:, products_name].fillna(0)
+        df['product_payroll'] = df['product_payroll'].astype(int)
+        df['product_second_pensions'] = df['product_second_pensions'].astype(int)
     
     print("Data Cleaning Done !")
     
     return df
 
-
-df=LoadCsv("Cleaned_Renamed_train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
-DisplayInformation(df)

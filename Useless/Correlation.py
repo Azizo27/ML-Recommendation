@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from DataCleaning import LoadCsv
 from IncomeCleaning import *
-from IncomePrediction import predict_income
+from Useless.IncomePrediction import predict_income
 
 
 def select_featuresVER2(data, target, threshold):
