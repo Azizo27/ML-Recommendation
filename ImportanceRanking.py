@@ -28,10 +28,10 @@ def EncodingAllFeatures(dataWithJustFeatures):
     return X
 
 
-def TransformDfToPredict(TrainFeaturesFile, DfToPredict):
+def TransformDfToPredict(target, DfToPredict):
     dataToPredict = EncodingAllFeatures(DfToPredict)
     
-    with open(TrainFeaturesFile, 'r') as file:
+    with open(os.path.join(target, 'FittedFeaturesof'+target+'.txt'), 'r') as file:
         train_features_name = file.read().split(',')
 
     column_names_df = dataToPredict.columns.tolist()
@@ -54,7 +54,7 @@ def CreatingModelProduct(df, model_file_name, features, target):
     print("Starting...")
     
     X = EncodingAllFeatures(df[features])
-    with open('FittedFeaturesof'+target+'.txt', 'w') as file:
+    with open(os.path.join(target, 'FittedFeaturesof'+target+'.txt'),'w') as file:
         column_names = X.columns.tolist()
         file.write(','.join(str(item) for item in column_names))
 
@@ -73,31 +73,26 @@ def CreatingModelProduct(df, model_file_name, features, target):
     print("Accuracy:", accuracy)
     
     print("Saving the trained model to a file...")
-    pickle.dump(model, open(model_file_name,'wb'))
+    with open(os.path.join(target, model_file_name), "wb") as file:
+        pickle.dump(model, file)
     
 def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, FileToCreateModel):
     
     #If the model does not exist, create it
     if not os.path.exists(target):
         print("Creating Subfolders for the target "+target +" ...")
-        os.makedirs(target)
+        os.makedirs(target, exist_ok=True)
         print("Model does not exist, creating it...")
         dfForTraining = LoadCsv(FileToCreateModel, FileToCreateModel)
         CreatingModelProduct(dfForTraining, model_file_name, features, target)
     
     print("Loading model "+model_file_name+ "...")
 
-    dataToPredict = TransformDfToPredict('FittedFeaturesof'+target+'.txt', dfToPredict)
-    model = pickle.load(open(model_file_name,'rb'))
+    dataToPredict = TransformDfToPredict(target, dfToPredict)
     
-    
-    '''
-    feature_importances = model.feature_importances_
-    top_feature_indices = np.argsort(feature_importances)[::-1]
-    features = dfToPredict.columns[top_feature_indices]
-    print("features of model: ", features)
-    '''
-    
+    with open(os.path.join(target, model_file_name), "rb") as file:
+        model = pickle.load(file)
+
     
     print("Predicting probability of test for being buyed...")
     # Use predict_proba to get the probability
@@ -117,7 +112,8 @@ def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, Fi
     dataToPredict["customer_code"] = dfToPredict.loc[dataToPredict.index, "customer_code"]
     
     df_selected = dataToPredict[['customer_code', target]]
-    df_selected.to_csv('prediction_'+target+'.csv', index=False)
+    df_selected.to_csv(os.path.join(target, 'prediction_'+target+'.csv'), index=False)
+
 
 
 dfTopredict = LoadCsv("Cleaned_Renamed_test_ver2.csv", "Cleaned_Renamed_test_ver2.csv")
@@ -125,6 +121,7 @@ dfTopredict = LoadCsv("Cleaned_Renamed_test_ver2.csv", "Cleaned_Renamed_test_ver
 features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
 FileToCreateModel = "Cleaned_Renamed_smalltrain_ver2.csv"
 
+'''
 all_products=  [ "product_savings_account", "product_guarantees", "product_current_accounts",
     "product_derivada_account", "product_payroll_account", "product_junior_account",
     "product_mas_particular_account", "product_particular_account", "product_particular_plus_account",
@@ -132,6 +129,9 @@ all_products=  [ "product_savings_account", "product_guarantees", "product_curre
     "product_e_account", "product_funds", "product_mortgage", "product_first_pensions",
     "product_loans", "product_taxes", "product_credit_card", "product_securities",
     "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
+'''
+
+all_products=  [ "product_current_accounts","product_payroll_account"]
 
 
 for target in all_products:
