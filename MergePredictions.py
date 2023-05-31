@@ -1,7 +1,8 @@
 import os
 import pandas as pd
+import numpy as np
 
-def merge_dataframes():
+def MergePredictions():
     subfolders = [f for f in os.listdir('.') if f.startswith('product_') and os.path.isdir(f)]
 
     dfs = []
@@ -21,5 +22,3 @@ def merge_dataframes():
 
     final_df.to_csv("Finalprediction.csv", index=False)
 
-
-merge_dataframes()
