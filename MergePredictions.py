@@ -20,5 +20,7 @@ def MergePredictions():
     
     final_df = merged_df.groupby(merged_df.index).first().reset_index(drop=True)
 
-    final_df.to_csv("Finalprediction.csv", index=False)
+    #final_df.to_csv("Finalprediction.csv", index=False)
+    
+    return final_df
 

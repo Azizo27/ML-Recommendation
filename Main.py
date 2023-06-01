@@ -1,6 +1,7 @@
 from LoadCsv import LoadCsv
 from PredictProbabilityProduct import PredictProbabilityProduct
 from MergePredictions import MergePredictions
+from RankRecommendation import RankRecommendation
 import pandas as pd
 import numpy as np
 
@@ -28,4 +29,7 @@ if __name__ == '__main__':
         PredictProbabilityProduct(dfTopredict, features, target, model_file_name, FileToCreateModel)
         print("Done with", target)
     
-    MergePredictions()
+    print("Merging predictions...")
+    MergedDf = MergePredictions()
+    print("Ranking recommendations...")
+    RankRecommendation(MergedDf)
