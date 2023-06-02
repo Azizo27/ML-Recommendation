@@ -108,8 +108,10 @@ def CleaningData(df):
     
     print("Cleaning Gross Income...")
     #At the end, I decided to drop all the rows with null values in this column
+    '''
     df['gross_income'] = df['gross_income'].str.replace(' ', '')
     df['gross_income'] = pd.to_numeric(df['gross_income'], errors='coerce')
+    '''
     df.dropna(subset=['gross_income'], inplace=True)
 
     products_name = [col for col in df.columns if col.startswith('product_')]
