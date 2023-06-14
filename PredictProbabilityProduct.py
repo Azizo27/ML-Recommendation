@@ -21,7 +21,7 @@ def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, Fi
     
     print("Loading model "+model_file_name+ "...")
 
-    dataToPredict = TransformDfToPredict(target, dfToPredict)
+    dataToPredict = TransformDfToPredict(dfToPredict)
     
     with open(os.path.join(target, model_file_name), "rb") as file:
         model = pickle.load(file)

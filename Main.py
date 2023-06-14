@@ -24,7 +24,9 @@ if __name__ == '__main__':
         PredictProbabilityProduct(dfTopredict, features, target, model_file_name, FileToCreateModel)
         print("Done with", target)
 
+    '''
     print("Merging predictions...")
     MergedDf = MergePredictions()
     print("Ranking recommendations...")
     RankRecommendation(MergedDf)
+    '''
