@@ -1,0 +1,57 @@
+Loading data...
+Data loaded. Concatenating chunks...
+
+
+
+Number of zeros for product_credit_card in the REAL CASE : 672307       
+Number of zeros for product_credit_card in the PREDICTION CASE : 619288 
+Number of commun zero values for product_credit_card : 603700
+
+Number of ones for product_credit_card in the REAL CASE : 30128
+Number of ones for product_credit_card in the PREDICTION CASE : 83147   
+Number of commun one values for product_credit_card : 14540
+The similarity of the product_credit_card column is:  88.0138375792778 %
+
+
+
+Number of zeros for product_current_accounts in the REAL CASE : 279841      
+Number of zeros for product_current_accounts in the PREDICTION CASE : 167601
+Number of commun zero values for product_current_accounts : 86082
+
+Number of ones for product_current_accounts in the REAL CASE : 422594
+Number of ones for product_current_accounts in the PREDICTION CASE : 534834
+Number of commun one values for product_current_accounts : 341075
+The similarity of the product_current_accounts column is:  60.810893534633095 %
+
+
+
+Number of zeros for product_derivada_account in the REAL CASE : 702170
+Number of zeros for product_derivada_account in the PREDICTION CASE : 699295
+Number of commun zero values for product_derivada_account : 699081
+
+Number of ones for product_derivada_account in the REAL CASE : 265
+Number of ones for product_derivada_account in the PREDICTION CASE : 3140
+Number of commun one values for product_derivada_account : 51
+The similarity of the product_derivada_account column is:  99.52977855602298 %
+
+
+
+Number of zeros for product_direct_debit in the REAL CASE : 610525
+Number of zeros for product_direct_debit in the PREDICTION CASE : 560192
+Number of commun zero values for product_direct_debit : 523185
+
+Number of ones for product_direct_debit in the REAL CASE : 91910
+Number of ones for product_direct_debit in the PREDICTION CASE : 142243
+Number of commun one values for product_direct_debit : 54903
+The similarity of the product_direct_debit column is:  82.29772149736274 %
+
+
+
+Number of zeros for product_e_account in the REAL CASE : 639830
+Number of zeros for product_e_account in the PREDICTION CASE : 609064
+Number of commun zero values for product_e_account : 574404
+
+Number of ones for product_e_account in the REAL CASE : 62605
+Number of ones for product_e_account in the PREDICTION CASE : 93371
+Number of commun one values for product_e_account : 27945
+The similarity of the product_e_account column is:  85.75156420166991 %

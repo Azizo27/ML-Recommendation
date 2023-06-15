@@ -1,0 +1,567 @@
+Loading data...
+Data loaded. Concatenating chunks...
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_savings_account  prediction_target  real_target
+6496   48     211323.27                 191                                            True  ...      True                     0.09                  0            0
+2586   24     211438.44                   9                                           False  ...      True                     0.10                  0            0
+
+[2 rows x 13 columns]
+Done with product_savings_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+Empty DataFrame
+segmentation_03 - UNIVERSITARIO, gender_H, gender_V, product_guarantees]
+Index: []
+Done with product_guarantees
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_current_accounts  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                      0.72                  1            1
+4684   28     117184.29                  20                                           False  ...     False                      1.00                  1            1
+1731   24      45961.17                  47                                            True  ...      True                      1.00                  1            0
+4742   23      45683.52                  20                                           False  ...      True                      0.89                  1            1
+4521   22     112921.23                  21                                           False  ...      True                      1.00                  1            1
+...   ...           ...                 ...                                             ...  ...       ...                       ...                ...          ...
+6412   60     148905.39                 199                                            True  ...      True                      0.30                  0            1
+8285   51      71029.98                  62                                           False  ...      True                      0.95                  1            1
+7853   65      86931.93                 104                                            True  ...      True                      0.76                  1            1
+1095   22      60090.21                  32                                           False  ...      True                      1.00                  1            1
+6929   37     278380.38                 184                                            True  ...     False                      0.19                  0            0
+
+[1985 rows x 13 columns]
+Done with product_current_accounts
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_derivada_account  prediction_target  real_target
+6681   47     213906.90                 237                                            True  ...      True                      0.06                  0            0
+6300   47     214088.04                 215                                            True  ...      True                      0.06                  0            0
+
+[2 rows x 13 columns]
+Done with product_derivada_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_payroll_account  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True                     0.60                  1            0
+5202   62     140653.11                 171                                            True  ...      True                     0.18                  0            0
+7487   75     257985.69                 188                                            True  ...      True                     0.07                  0            0
+5272   55      94393.32                 174                                            True  ...      True                     0.75                  1            1
+5653   43     131475.99                 153                                            True  ...      True                     0.20                  0            1
+...   ...           ...                 ...                                             ...  ...       ...                      ...                ...          ...
+1642   38     216127.47                  52                                            True  ...      True                     0.08                  0            0
+8898   36      62777.46                 128                                            True  ...     False                     0.46                  0            1
+8719   42     156219.63                 132                                            True  ...     False                     0.48                  0            0
+6412   60     148905.39                 199                                            True  ...      True                     0.63                  1            0
+6929   37     278380.38                 184                                            True  ...     False                     0.73                  1            1
+
+[851 rows x 13 columns]
+Done with product_payroll_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_junior_account  prediction_target  real_target
+8158    8     283646.22                  63                                            True  ...     False                    0.99                  1            1
+7907   16      99384.66                 107                                           False  ...     False                    0.95                  1            1
+9275   16     121700.22                 139                                           False  ...     False                    0.95                  1            1
+8142    8      97770.75                  67                                            True  ...      True                    0.97                  1            1
+1121    9     227731.80                  32                                            True  ...     False                    0.99                  1            1
+9643   13     112776.15                 110                                            True  ...     False                    0.99                  1            1
+9515   13     238152.00                 109                                            True  ...     False                    0.99                  1            1
+7653   19     138973.95                  89                                            True  ...      True                    0.64                  1            1
+9308   20      58003.20                 138                                            True  ...      True                    0.10                  0            0
+8365    7      73931.94                  65                                            True  ...      True                    0.96                  1            1
+8279    7      47796.66                  62                                            True  ...     False                    0.94                  1            1
+9495   12     163172.07                 116                                            True  ...      True                    0.99                  1            1
+3187    3      54686.46                   1                                            True  ...      True                    0.88                  1            1
+8138    8     142145.31                  71                                            True  ...      True                    0.98                  1            1
+3205   20     110177.55                   1                                            True  ...     False                    0.06                  0            0
+9476   20     211578.96                 115                                            True  ...     False                    0.22                  0            0
+2997    8      88322.13                   6                                            True  ...     False                    0.89                  1            1
+9419   12     114725.73                 113                                            True  ...      True                    0.99                  1            1
+8072   10      66478.02                 102                                            True  ...      True                    0.97                  1            1
+611     8      57711.48                  28                                            True  ...     False                    0.92                  1            1
+3295   11     143597.58                   3                                            True  ...      True                    0.97                  1            1
+7879   20     222969.75                 106                                            True  ...     False                    0.23                  0            0
+5746   18      53363.19                 146                                            True  ...      True                    0.96                  1            1
+8832   19     611550.57                 135                                            True  ...      True                    0.88                  1            1
+6128   15     101848.77                 159                                           False  ...     False                    0.91                  1            1
+9917   12      84538.74                 117                                            True  ...     False                    0.93                  1            1
+8793   13     338651.67                 132                                           False  ...      True                    0.93                  1            1
+
+[27 rows x 13 columns]
+Done with product_junior_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_mas_particular_account  prediction_target  real_target
+8328   64      91441.62                  59                                            True  ...     False                            0.53                  1            0
+1513   52      71260.98                  49                                            True  ...     False                            0.38                  0            0
+3145   91     240697.38                   2                                            True  ...      True                            0.28                  0            0
+2165   37      69408.24                  44                                            True  ...      True                            0.06                  0            0
+7850   36     151301.40                  60                                           False  ...      True                            0.29                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                             ...                ...          ...
+1825   36      83056.11                  48                                            True  ...     False                            0.24                  0            1
+6498   82     140348.49                  55                                            True  ...     False                            0.27                  0            0
+4463   74      46990.62                  14                                           False  ...      True                            0.06                  0            0
+1544   46      62575.83                  50                                            True  ...      True                            0.36                  0            0
+1642   38     216127.47                  52                                            True  ...      True                            0.40                  0            0
+
+[93 rows x 13 columns]
+Done with product_mas_particular_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_particular_account  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                        0.31                  0            1
+6340   47     197954.37                 212                                            True  ...      True                        0.36                  0            1
+5202   62     140653.11                 171                                            True  ...      True                        0.79                  1            0
+6363   55     139186.71                 200                                           False  ...     False                        0.10                  0            0
+7487   75     257985.69                 188                                            True  ...      True                        0.41                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                         ...                ...          ...
+7722   61      90771.84                  92                                           False  ...      True                        0.07                  0            0
+8458   48      70284.75                  81                                            True  ...      True                        0.11                  0            0
+8719   42     156219.63                 132                                            True  ...     False                        0.49                  0            0
+6412   60     148905.39                 199                                            True  ...      True                        0.51                  1            0
+6929   37     278380.38                 184                                            True  ...     False                        0.37                  0            0
+
+[837 rows x 13 columns]
+Done with product_particular_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_particular_plus_account  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True                             0.45                  0            0
+5272   55      94393.32                 174                                            True  ...      True                             0.34                  0            0
+8158    8     283646.22                  63                                            True  ...     False                             0.15                  0            0
+9896   44      98222.97                 117                                            True  ...     False                             0.28                  0            0
+4947   62     113974.35                 166                                            True  ...      True                             0.06                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                              ...                ...          ...
+8719   42     156219.63                 132                                            True  ...     False                             0.18                  0            0
+6412   60     148905.39                 199                                            True  ...      True                             0.16                  0            0
+8285   51      71029.98                  62                                           False  ...      True                             0.18                  0            0
+7853   65      86931.93                 104                                            True  ...      True                             0.07                  0            0
+6929   37     278380.38                 184                                            True  ...     False                             0.32                  0            1
+
+[519 rows x 13 columns]
+Done with product_particular_plus_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_short_term_deposits  prediction_target  real_target
+3145   91     240697.38                   2                                            True  ...      True                         0.53                  1            0
+5309   45     139018.59                 130                                            True  ...     False                         0.06                  0            0
+3160   50      36611.01                   3                                            True  ...      True                         0.19                  0            0
+9445   87     290454.42                 117                                            True  ...     False                         0.07                  0            0
+6603   52     204934.80                 231                                            True  ...     False                         0.09                  0            0
+3033   36     140009.70                   5                                            True  ...      True                         0.26                  0            0
+1597   49     402508.74                   4                                            True  ...     False                         0.32                  0            0
+3251   42      82252.77                   5                                            True  ...     False                         0.28                  0            0
+2885   33      31385.94                  11                                            True  ...     False                         0.16                  0            0
+9459   38     100687.80                 117                                            True  ...      True                         0.06                  0            0
+3146   45      29542.35                   2                                            True  ...      True                         0.15                  0            1
+8492   31      77309.58                  12                                            True  ...      True                         0.11                  0            0
+5529   37      28314.96                 153                                            True  ...      True                         0.10                  0            0
+3208   47      50158.08                   2                                            True  ...     False                         0.26                  0            0
+9913   51     191941.35                   1                                            True  ...     False                         0.29                  0            1
+3245   52     442136.64                   4                                            True  ...     False                         0.07                  0            0
+9712   35     249231.84                 121                                            True  ...      True                         0.11                  0            0
+3281   32     144343.32                   4                                            True  ...      True                         0.60                  1            1
+3282   80     140109.78                   4                                            True  ...      True                         0.06                  0            0
+7599   42      59262.90                  96                                            True  ...     False                         0.13                  0            0
+8850   45     279635.04                 134                                            True  ...     False                         0.22                  0            0
+3143   54      67978.98                   2                                            True  ...      True                         0.63                  1            1
+6306   42     112023.06                 213                                            True  ...      True                         0.13                  0            0
+
+[23 rows x 13 columns]
+Done with product_short_term_deposits
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_medium_term_deposits  prediction_target  real_target
+8243   76     437503.20                  74                                            True  ...      True                          0.09                  0            0
+7058   78     140852.76                  21                                            True  ...      True                          0.12                  0            0
+8773   36     475689.00                 131                                            True  ...     False                          0.06                  0            0
+6939   44     143172.30                 183                                            True  ...     False                          0.14                  0            0
+6634   60     177366.69                 223                                            True  ...      True                          0.06                  0            0
+7606   77      58435.26                  96                                            True  ...      True                          0.11                  0            0
+6543   49     191985.66                 232                                            True  ...      True                          0.11                  0            0
+9447   78      95764.23                 117                                            True  ...      True                          0.12                  0            0
+8582   76      53903.67                  80                                            True  ...      True                          0.12                  0            0
+7537   58     364080.06                  93                                            True  ...     False                          0.08                  0            0
+8803   70     293897.37                 135                                            True  ...     False                          0.17                  0            0
+7921   76     121835.16                 105                                            True  ...      True                          0.34                  0            0
+7484   54      68649.90                 188                                            True  ...      True                          0.12                  0            0
+6832   44     157980.66                 223                                            True  ...     False                          0.19                  0            0
+8280   54     295900.92                  62                                            True  ...     False                          0.13                  0            0
+7475   39     250169.31                 232                                            True  ...      True                          0.10                  0            0
+3245   52     442136.64                   4                                            True  ...     False                          0.06                  0            0
+6962   56     424531.26                 184                                            True  ...      True                          0.09                  0            0
+5447   70      80871.84                 170                                            True  ...      True                          0.06                  0            0
+7599   42      59262.90                  96                                            True  ...     False                          0.09                  0            0
+7498   35     299113.14                  94                                            True  ...      True                          0.06                  0            0
+6306   42     112023.06                 213                                            True  ...      True                          0.06                  0            0
+7853   65      86931.93                 104                                            True  ...      True                          0.07                  0            0
+
+[23 rows x 13 columns]
+Done with product_medium_term_deposits
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_long_term_deposits  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                        0.07                  0            0
+6340   47     197954.37                 212                                            True  ...      True                        0.34                  0            0
+439    24     297549.06                  35                                            True  ...     False                        0.07                  0            0
+7487   75     257985.69                 188                                            True  ...      True                        0.10                  0            0
+5272   55      94393.32                 174                                            True  ...      True                        0.11                  0            1
+...   ...           ...                 ...                                             ...  ...       ...                         ...                ...          ...
+8458   48      70284.75                  81                                            True  ...      True                        0.07                  0            1
+8719   42     156219.63                 132                                            True  ...     False                        0.14                  0            0
+6412   60     148905.39                 199                                            True  ...      True                        0.65                  1            0
+7853   65      86931.93                 104                                            True  ...      True                        0.06                  0            0
+6929   37     278380.38                 184                                            True  ...     False                        0.74                  1            0
+
+[523 rows x 13 columns]
+Done with product_long_term_deposits
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_e_account  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True               0.27                  0            0
+4742   23      45683.52                  20                                           False  ...      True               0.27                  0            0
+6340   47     197954.37                 212                                            True  ...      True               0.76                  1            0
+5202   62     140653.11                 171                                            True  ...      True               0.25                  0            1
+7487   75     257985.69                 188                                            True  ...      True               0.10                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                ...                ...          ...
+1642   38     216127.47                  52                                            True  ...      True               0.23                  0            0
+8719   42     156219.63                 132                                            True  ...     False               0.46                  0            0
+6412   60     148905.39                 199                                            True  ...      True               0.88                  1            1
+7853   65      86931.93                 104                                            True  ...      True               0.45                  0            0
+6929   37     278380.38                 184                                            True  ...     False               0.71                  1            0
+
+[877 rows x 13 columns]
+Done with product_e_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_funds  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True           0.24                  0            0
+5653   43     131475.99                 153                                            True  ...      True           0.09                  0            0
+9920   50     102808.53                 120                                            True  ...     False           0.06                  0            0
+6590   54     208088.97                 231                                            True  ...      True           0.07                  0            0
+8328   64      91441.62                  59                                            True  ...     False           0.32                  0            0
+...   ...           ...                 ...                                             ...  ...       ...            ...                ...          ...
+5289   46      49466.37                 124                                            True  ...      True           0.06                  0            0
+9432   68     237659.16                 116                                            True  ...     False           0.17                  0            0
+6412   60     148905.39                 199                                            True  ...      True           0.26                  0            1
+7853   65      86931.93                 104                                            True  ...      True           0.09                  0            0
+6929   37     278380.38                 184                                            True  ...     False           0.35                  0            0
+
+[259 rows x 13 columns]
+Done with product_funds
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_mortgage  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True              0.24                  0            0
+6231   51     130615.71                 209                                            True  ...     False              0.15                  0            0
+5527   91      43084.53                 153                                            True  ...     False              0.06                  0            0
+6292   56     272200.92                 212                                            True  ...      True              0.10                  0            0
+9417   43      85446.75                 113                                            True  ...      True              0.10                  0            0
+...   ...           ...                 ...                                             ...  ...       ...               ...                ...          ...
+6306   42     112023.06                 213                                            True  ...      True              0.34                  0            0
+6249   51     159318.51                 205                                            True  ...      True              0.08                  0            0
+5613   49     125461.23                 155                                            True  ...      True              0.11                  0            0
+7364   43      82389.45                 149                                            True  ...      True              0.09                  0            0
+6199   45      85463.64                 209                                            True  ...      True              0.08                  0            0
+
+[88 rows x 13 columns]
+Done with product_mortgage
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_first_pensions  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True                    0.27                  0            0
+7487   75     257985.69                 188                                            True  ...      True                    0.10                  0            0
+7051   60     101995.14                 176                                            True  ...      True                    0.08                  0            0
+9920   50     102808.53                 120                                            True  ...     False                    0.14                  0            0
+8243   76     437503.20                  74                                            True  ...      True                    0.06                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                     ...                ...          ...
+7018   42     102982.50                 175                                            True  ...      True                    0.18                  0            0
+4848   66     125668.59                 165                                            True  ...     False                    0.07                  0            0
+8719   42     156219.63                 132                                            True  ...     False                    0.07                  0            0
+6412   60     148905.39                 199                                            True  ...      True                    0.10                  0            0
+6929   37     278380.38                 184                                            True  ...     False                    0.07                  0            0
+
+[168 rows x 13 columns]
+Done with product_first_pensions
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_loans  prediction_target  real_target
+9317   40      35724.27                 139                                            True  ...     False           0.07                  0            0
+7539   32      61943.40                  93                                            True  ...     False           0.06                  0            0
+8020   56      43943.40                  99                                            True  ...      True           0.07                  0            0
+9412   41      65762.64                 113                                            True  ...      True           0.30                  0            0
+5440   55     476565.54                 115                                            True  ...      True           0.06                  0            0
+8080   53     152079.78                 101                                            True  ...     False           0.13                  0            0
+5183   72      30429.87                 172                                            True  ...     False           0.07                  0            0
+7529   42      67484.40                  93                                            True  ...      True           0.21                  0            1
+7203   45     160420.80                 185                                            True  ...      True           0.06                  0            0
+6977   47     180397.62                 182                                            True  ...      True           0.10                  0            0
+5205   40     154533.12                 171                                            True  ...      True           0.09                  0            0
+9393   54      55828.89                  87                                            True  ...      True           0.09                  0            0
+5467   55      97862.88                 169                                            True  ...      True           0.08                  0            0
+7578   40      62420.16                  97                                            True  ...     False           0.06                  0            0
+6217   40     146935.62                 210                                            True  ...      True           0.06                  0            0
+9646   35      31335.48                 110                                            True  ...      True           0.10                  0            1
+7983   45     123935.82                 101                                            True  ...     False           0.22                  0            0
+7565   38      66382.05                  97                                            True  ...      True           0.06                  0            0
+9657   44     128496.66                 111                                            True  ...      True           0.13                  0            0
+9129   36      45352.86                 146                                            True  ...     False           0.06                  0            0
+7621   56      78962.73                  95                                            True  ...     False           0.07                  0            0
+7599   42      59262.90                  96                                            True  ...     False           0.11                  0            0
+7958   22      38549.04                 100                                            True  ...      True           0.06                  0            0
+1113   54      64249.14                  32                                            True  ...      True           0.06                  0            0
+7614   54     100425.42                  95                                            True  ...      True           0.07                  0            0
+9593   49      62388.72                 111                                            True  ...      True           0.09                  0            1
+2127   52     154639.89                  38                                            True  ...      True           0.06                  0            0
+
+[27 rows x 13 columns]
+Done with product_loans
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_taxes  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True           0.08                  0            0
+4742   23      45683.52                  20                                           False  ...      True           0.13                  0            0
+6340   47     197954.37                 212                                            True  ...      True           0.31                  0            1
+7487   75     257985.69                 188                                            True  ...      True           0.11                  0            0
+5272   55      94393.32                 174                                            True  ...      True           0.59                  1            1
+...   ...           ...                 ...                                             ...  ...       ...            ...                ...          ...
+8898   36      62777.46                 128                                            True  ...     False           0.53                  1            0
+7722   61      90771.84                  92                                           False  ...      True           0.11                  0            0
+8719   42     156219.63                 132                                            True  ...     False           0.14                  0            0
+6412   60     148905.39                 199                                            True  ...      True           0.48                  0            0
+6929   37     278380.38                 184                                            True  ...     False           0.71                  1            0
+
+[702 rows x 13 columns]
+Done with product_taxes
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_credit_card  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                 0.17                  0            0
+6340   47     197954.37                 212                                            True  ...      True                 0.46                  0            0
+5202   62     140653.11                 171                                            True  ...      True                 0.52                  1            0
+7487   75     257985.69                 188                                            True  ...      True                 0.09                  0            0
+5272   55      94393.32                 174                                            True  ...      True                 0.51                  1            1
+...   ...           ...                 ...                                             ...  ...       ...                  ...                ...          ...
+8898   36      62777.46                 128                                            True  ...     False                 0.27                  0            0
+8458   48      70284.75                  81                                            True  ...      True                 0.07                  0            0
+8719   42     156219.63                 132                                            True  ...     False                 0.18                  0            0
+6412   60     148905.39                 199                                            True  ...      True                 0.39                  0            0
+6929   37     278380.38                 184                                            True  ...     False                 0.64                  1            1
+
+[654 rows x 13 columns]
+Done with product_credit_card
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_securities  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True                0.19                  0            1
+7487   75     257985.69                 188                                            True  ...      True                0.38                  0            0
+5272   55      94393.32                 174                                            True  ...      True                0.55                  1            0
+8158    8     283646.22                  63                                            True  ...     False                0.10                  0            0
+9920   50     102808.53                 120                                            True  ...     False                0.07                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                 ...                ...          ...
+8458   48      70284.75                  81                                            True  ...      True                0.24                  0            0
+8719   42     156219.63                 132                                            True  ...     False                0.06                  0            0
+6412   60     148905.39                 199                                            True  ...      True                0.23                  0            0
+7853   65      86931.93                 104                                            True  ...      True                0.07                  0            0
+6929   37     278380.38                 184                                            True  ...     False                0.35                  0            0
+
+[364 rows x 13 columns]
+Done with product_securities
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_home_account  prediction_target  real_target
+6340   47     197954.37                 212                                            True  ...      True                  0.27                  0            0
+6843   49      92745.18                 223                                           False  ...     False                  0.06                  0            0
+9123   36     247693.83                 145                                           False  ...      True                  0.08                  0            0
+8791   42     105590.13                 132                                            True  ...      True                  0.10                  0            0
+6830   76      75717.36                 198                                            True  ...      True                  0.07                  0            0
+6897   48      78172.32                 178                                            True  ...      True                  0.06                  0            0
+6442   47      93562.05                 206                                            True  ...      True                  0.28                  0            0
+5665   41      61158.12                 154                                            True  ...      True                  0.06                  0            0
+7204   53     382855.80                 194                                           False  ...      True                  0.07                  0            0
+7201   41      91950.00                 193                                            True  ...      True                  0.12                  0            1
+6754   46     106460.13                 225                                            True  ...     False                  0.06                  0            0
+8834   37      88683.96                 134                                           False  ...     False                  0.26                  0            0
+5250   39     204110.52                 173                                            True  ...     False                  0.09                  0            0
+5735   45     157682.34                 148                                            True  ...      True                  0.10                  0            0
+8773   36     475689.00                 131                                            True  ...     False                  0.13                  0            1
+6516   46     142510.50                 204                                            True  ...      True                  0.09                  0            0
+9833   42     111871.59                 125                                            True  ...     False                  0.23                  0            0
+8764   37     118486.74                 131                                            True  ...     False                  0.11                  0            0
+5098   41     336709.68                 164                                            True  ...     False                  0.06                  0            0
+8360   36     282200.13                  65                                           False  ...      True                  0.06                  0            0
+5851   34      62341.89                 150                                            True  ...     False                  0.07                  0            0
+6623   48     259825.80                 231                                            True  ...     False                  0.10                  0            0
+9965   36      91549.14                 119                                            True  ...     False                  0.16                  0            0
+9410   35     248292.81                 113                                            True  ...      True                  0.55                  1            0
+7456   64     191978.49                 188                                            True  ...      True                  0.07                  0            0
+6217   40     146935.62                 210                                            True  ...      True                  0.09                  0            0
+4870   38     120864.45                 164                                           False  ...      True                  0.12                  0            0
+7888   35     276050.25                 107                                            True  ...      True                  0.32                  0            0
+7234   46     188630.19                 193                                            True  ...      True                  0.10                  0            0
+8922   37      71963.61                 126                                           False  ...     False                  0.14                  0            0
+7371   69     172768.92                 185                                           False  ...      True                  0.08                  0            0
+6975   44     169877.19                 182                                           False  ...      True                  0.07                  0            0
+9767   35     126758.43                 125                                           False  ...     False                  0.17                  0            0
+6271   37     168631.59                 208                                            True  ...     False                  0.16                  0            0
+7475   39     250169.31                 232                                            True  ...      True                  0.16                  0            0
+9712   35     249231.84                 121                                            True  ...      True                  0.23                  0            0
+6101   42     126453.87                 138                                            True  ...      True                  0.09                  0            0
+6914   41     113332.86                 179                                            True  ...      True                  0.07                  0            0
+7879   20     222969.75                 106                                            True  ...     False                  0.08                  0            0
+7498   35     299113.14                  94                                            True  ...      True                  0.15                  0            0
+9932   43      63608.67                 119                                            True  ...     False                  0.07                  0            0
+4995   38     115200.63                 165                                           False  ...      True                  0.11                  0            0
+6682   55     155387.22                 237                                           False  ...     False                  0.15                  0            0
+8722   42     127889.43                 132                                            True  ...     False                  0.12                  0            0
+6306   42     112023.06                 213                                            True  ...      True                  0.11                  0            0
+7018   42     102982.50                 175                                            True  ...      True                  0.08                  0            0
+8719   42     156219.63                 132                                            True  ...     False                  0.08                  0            0
+6929   37     278380.38                 184                                            True  ...     False                  0.38                  0            0
+
+[48 rows x 13 columns]
+Done with product_home_account
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_payroll  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True             0.10                  0            0
+6340   47     197954.37                 212                                            True  ...      True             0.50                  0            0
+5272   55      94393.32                 174                                            True  ...      True             0.77                  1            1
+5653   43     131475.99                 153                                            True  ...      True             0.29                  0            1
+7051   60     101995.14                 176                                            True  ...      True             0.08                  0            0
+...   ...           ...                 ...                                             ...  ...       ...              ...                ...          ...
+1888   38     193691.40                  42                                            True  ...     False             0.21                  0            0
+8898   36      62777.46                 128                                            True  ...     False             0.34                  0            0
+8719   42     156219.63                 132                                            True  ...     False             0.45                  0            0
+6412   60     148905.39                 199                                            True  ...      True             0.36                  0            0
+6929   37     278380.38                 184                                            True  ...     False             0.68                  1            1
+
+[691 rows x 13 columns]
+Done with product_payroll
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_second_pensions  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                     0.07                  0            0
+6340   47     197954.37                 212                                            True  ...      True                     0.59                  1            0
+5202   62     140653.11                 171                                            True  ...      True                     0.11                  0            0
+5272   55      94393.32                 174                                            True  ...      True                     0.62                  1            1
+5653   43     131475.99                 153                                            True  ...      True                     0.20                  0            1
+...   ...           ...                 ...                                             ...  ...       ...                      ...                ...          ...
+1888   38     193691.40                  42                                            True  ...     False                     0.24                  0            0
+8898   36      62777.46                 128                                            True  ...     False                     0.22                  0            0
+8719   42     156219.63                 132                                            True  ...     False                     0.40                  0            0
+6412   60     148905.39                 199                                            True  ...      True                     0.37                  0            0
+6929   37     278380.38                 184                                            True  ...     False                     0.70                  1            1
+
+[765 rows x 13 columns]
+Done with product_second_pensions
+Starting...
+Splitting Numerical and Categorical Features...
+Converting...
+Concatenating And Splitting...
+Fitting...
+Predicting probability of test for being buyed...
+      age  gross_income  customer_seniority  customer_relation_type_at_beginning_of_month_A  ...  gender_V  product_direct_debit  prediction_target  real_target
+6252   62      70198.65                 100                                            True  ...      True                  0.17                  0            1
+6340   47     197954.37                 212                                            True  ...      True                  0.91                  1            1
+576    23      91941.63                  35                                            True  ...      True                  0.14                  0            0
+5202   62     140653.11                 171                                            True  ...      True                  0.13                  0            0
+7487   75     257985.69                 188                                            True  ...      True                  0.09                  0            0
+...   ...           ...                 ...                                             ...  ...       ...                   ...                ...          ...
+8898   36      62777.46                 128                                            True  ...     False                  0.41                  0            1
+8719   42     156219.63                 132                                            True  ...     False                  0.49                  0            0
+6412   60     148905.39                 199                                            True  ...      True                  0.92                  1            0
+7853   65      86931.93                 104                                            True  ...      True                  0.08                  0            0
+6929   37     278380.38                 184                                            True  ...     False                  0.86                  1            1

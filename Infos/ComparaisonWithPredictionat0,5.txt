@@ -1,0 +1,266 @@
+Loading data...
+Data loaded. Concatenating chunks...
+
+
+
+Number of zeros for product_credit_card in the REAL CASE : 672307        
+Number of zeros for product_credit_card in the PREDICTION CASE : 691794  
+Number of commun zero values for product_credit_card : 664415
+
+Number of ones for product_credit_card in the REAL CASE : 30128
+Number of ones for product_credit_card in the PREDICTION CASE : 10641    
+Number of commun one values for product_credit_card : 2749
+The similarity of the product_credit_card column is:  94.97875248243611 %
+
+
+
+Number of zeros for product_current_accounts in the REAL CASE : 279841
+Number of zeros for product_current_accounts in the PREDICTION CASE : 109640
+Number of commun zero values for product_current_accounts : 60133
+
+Number of ones for product_current_accounts in the REAL CASE : 422594
+Number of ones for product_current_accounts in the PREDICTION CASE : 592795
+Number of commun one values for product_current_accounts : 373087
+The similarity of the product_current_accounts column is:  61.67403389637476 %
+
+
+
+Number of zeros for product_derivada_account in the REAL CASE : 702170
+Number of zeros for product_derivada_account in the PREDICTION CASE : 702435
+Number of commun zero values for product_derivada_account : 702170
+
+Number of ones for product_derivada_account in the REAL CASE : 265
+Number of ones for product_derivada_account in the PREDICTION CASE : 0
+Number of commun one values for product_derivada_account : 0
+The similarity of the product_derivada_account column is:  99.96227408941752 %
+
+
+
+Number of zeros for product_direct_debit in the REAL CASE : 610525
+Number of zeros for product_direct_debit in the PREDICTION CASE : 631292
+Number of commun zero values for product_direct_debit : 569379
+
+Number of ones for product_direct_debit in the REAL CASE : 91910
+Number of ones for product_direct_debit in the PREDICTION CASE : 71143
+Number of commun one values for product_direct_debit : 29997
+The similarity of the product_direct_debit column is:  85.32832219351256 %
+
+
+
+Number of zeros for product_e_account in the REAL CASE : 639830
+Number of zeros for product_e_account in the PREDICTION CASE : 670012
+Number of commun zero values for product_e_account : 620356
+
+Number of ones for product_e_account in the REAL CASE : 62605
+Number of ones for product_e_account in the PREDICTION CASE : 32423
+Number of commun one values for product_e_account : 12949
+The similarity of the product_e_account column is:  90.15852000540974 %
+
+
+
+Number of zeros for product_first_pensions in the REAL CASE : 696024
+Number of zeros for product_first_pensions in the PREDICTION CASE : 701397
+Number of commun zero values for product_first_pensions : 695224
+
+Number of ones for product_first_pensions in the REAL CASE : 6411
+Number of ones for product_first_pensions in the PREDICTION CASE : 1038
+Number of commun one values for product_first_pensions : 238
+The similarity of the product_first_pensions column is:  99.0073102849374 %
+
+
+
+Number of zeros for product_funds in the REAL CASE : 689938
+Number of zeros for product_funds in the PREDICTION CASE : 699639
+Number of commun zero values for product_funds : 688117
+
+Number of ones for product_funds in the REAL CASE : 12497
+Number of ones for product_funds in the PREDICTION CASE : 2796
+Number of commun one values for product_funds : 975
+The similarity of the product_funds column is:  98.10046481169076 %
+
+
+
+Number of zeros for product_guarantees in the REAL CASE : 702421
+Number of zeros for product_guarantees in the PREDICTION CASE : 702434
+Number of commun zero values for product_guarantees : 702421
+
+Number of ones for product_guarantees in the REAL CASE : 14
+Number of ones for product_guarantees in the PREDICTION CASE : 1
+Number of commun one values for product_guarantees : 1
+The similarity of the product_guarantees column is:  99.99814929495255 %
+
+
+
+Number of zeros for product_home_account in the REAL CASE : 699810
+Number of zeros for product_home_account in the PREDICTION CASE : 702322
+Number of commun zero values for product_home_account : 699704
+
+Number of ones for product_home_account in the REAL CASE : 2625
+Number of ones for product_home_account in the PREDICTION CASE : 113
+Number of commun one values for product_home_account : 7
+The similarity of the product_home_account column is:  99.61220611159752 %
+
+
+
+Number of zeros for product_junior_account in the REAL CASE : 696203
+Number of zeros for product_junior_account in the PREDICTION CASE : 695233
+Number of commun zero values for product_junior_account : 695222
+
+Number of ones for product_junior_account in the REAL CASE : 6232
+Number of ones for product_junior_account in the PREDICTION CASE : 7202
+Number of commun one values for product_junior_account : 6221
+The similarity of the product_junior_account column is:  99.8587769686875 %
+
+
+
+Number of zeros for product_loans in the REAL CASE : 700788
+Number of zeros for product_loans in the PREDICTION CASE : 702323
+Number of commun zero values for product_loans : 700681
+
+Number of ones for product_loans in the REAL CASE : 1647
+Number of ones for product_loans in the PREDICTION CASE : 112
+Number of commun one values for product_loans : 5
+The similarity of the product_loans column is:  99.75100899015568 %
+
+
+
+Number of zeros for product_long_term_deposits in the REAL CASE : 675974
+Number of zeros for product_long_term_deposits in the PREDICTION CASE : 684485
+Number of commun zero values for product_long_term_deposits : 667213
+
+Number of ones for product_long_term_deposits in the REAL CASE : 26461
+Number of ones for product_long_term_deposits in the PREDICTION CASE : 17950
+Number of commun one values for product_long_term_deposits : 9189
+The similarity of the product_long_term_deposits column is:  96.2938919615338 %
+
+
+
+Number of zeros for product_mas_particular_account in the REAL CASE : 697372
+Number of zeros for product_mas_particular_account in the PREDICTION CASE : 690993
+Number of commun zero values for product_mas_particular_account : 686454
+
+Number of ones for product_mas_particular_account in the REAL CASE : 5063
+Number of ones for product_mas_particular_account in the PREDICTION CASE : 11442
+Number of commun one values for product_mas_particular_account : 524
+The similarity of the product_mas_particular_account column is:  97.79951169859132 %
+
+
+
+Number of zeros for product_medium_term_deposits in the REAL CASE : 701577
+Number of zeros for product_medium_term_deposits in the PREDICTION CASE : 702418
+Number of commun zero values for product_medium_term_deposits : 701561
+
+Number of ones for product_medium_term_deposits in the REAL CASE : 858
+Number of ones for product_medium_term_deposits in the PREDICTION CASE : 17
+Number of commun one values for product_medium_term_deposits : 1
+The similarity of the product_medium_term_deposits column is:  99.87571803796793 %
+
+
+
+Number of zeros for product_mortgage in the REAL CASE : 698444
+Number of zeros for product_mortgage in the PREDICTION CASE : 702057
+Number of commun zero values for product_mortgage : 698099
+
+Number of ones for product_mortgage in the REAL CASE : 3991
+Number of ones for product_mortgage in the PREDICTION CASE : 378
+Number of commun one values for product_mortgage : 33
+The similarity of the product_mortgage column is:  99.38741662929667 %
+
+
+
+Number of zeros for product_particular_account in the REAL CASE : 616948
+Number of zeros for product_particular_account in the PREDICTION CASE : 604759
+Number of commun zero values for product_particular_account : 560762
+
+Number of ones for product_particular_account in the REAL CASE : 85487
+Number of ones for product_particular_account in the PREDICTION CASE : 97676
+Number of commun one values for product_particular_account : 41490
+The similarity of the product_particular_account column is:  85.73775509477746 %
+
+
+
+Number of zeros for product_particular_plus_account in the REAL CASE : 673773
+Number of zeros for product_particular_plus_account in the PREDICTION CASE : 683738
+Number of commun zero values for product_particular_plus_account : 658545
+
+Number of ones for product_particular_plus_account in the REAL CASE : 28662
+Number of ones for product_particular_plus_account in the PREDICTION CASE : 18697
+Number of commun one values for product_particular_plus_account : 3469
+The similarity of the product_particular_plus_account column is:  94.24558855979556 %
+
+
+
+Number of zeros for product_payroll in the REAL CASE : 662286
+Number of zeros for product_payroll in the PREDICTION CASE : 687778
+Number of commun zero values for product_payroll : 652221
+
+Number of ones for product_payroll in the REAL CASE : 40149
+Number of ones for product_payroll in the PREDICTION CASE : 14657
+Number of commun one values for product_payroll : 4592
+The similarity of the product_payroll column is:  93.505164178892 %
+
+
+
+Number of zeros for product_payroll_account in the REAL CASE : 641936
+Number of zeros for product_payroll_account in the PREDICTION CASE : 670706
+Number of commun zero values for product_payroll_account : 621477
+
+Number of ones for product_payroll_account in the REAL CASE : 60499
+Number of ones for product_payroll_account in the PREDICTION CASE : 31729
+Number of commun one values for product_payroll_account : 11270
+The similarity of the product_payroll_account column is:  90.07908205029646 %
+
+
+
+Number of zeros for product_savings_account in the REAL CASE : 702363
+Number of zeros for product_savings_account in the PREDICTION CASE : 702434
+Number of commun zero values for product_savings_account : 702363
+
+Number of ones for product_savings_account in the REAL CASE : 72
+Number of ones for product_savings_account in the PREDICTION CASE : 1
+Number of commun one values for product_savings_account : 1
+The similarity of the product_savings_account column is:  99.98989230320244 %
+
+
+
+Number of zeros for product_second_pensions in the REAL CASE : 658425
+Number of zeros for product_second_pensions in the PREDICTION CASE : 687635
+Number of commun zero values for product_second_pensions : 648308
+
+Number of ones for product_second_pensions in the REAL CASE : 44010
+Number of ones for product_second_pensions in the PREDICTION CASE : 14800
+Number of commun one values for product_second_pensions : 4683
+The similarity of the product_second_pensions column is:  92.96105689494402 %
+
+
+
+Number of zeros for product_securities in the REAL CASE : 684352
+Number of zeros for product_securities in the PREDICTION CASE : 697772
+Number of commun zero values for product_securities : 681260
+
+Number of ones for product_securities in the REAL CASE : 18083
+Number of ones for product_securities in the PREDICTION CASE : 4663
+Number of commun one values for product_securities : 1571
+The similarity of the product_securities column is:  97.2091367884573 %
+
+
+
+Number of zeros for product_short_term_deposits in the REAL CASE : 702163
+Number of zeros for product_short_term_deposits in the PREDICTION CASE : 702399
+Number of commun zero values for product_short_term_deposits : 702128
+
+Number of ones for product_short_term_deposits in the REAL CASE : 272
+Number of ones for product_short_term_deposits in the PREDICTION CASE : 36
+Number of commun one values for product_short_term_deposits : 1
+The similarity of the product_short_term_deposits column is:  99.95643725042174 %
+
+
+
+Number of zeros for product_taxes in the REAL CASE : 662662
+Number of zeros for product_taxes in the PREDICTION CASE : 692970
+Number of commun zero values for product_taxes : 656077
+
+Number of ones for product_taxes in the REAL CASE : 39773
+Number of ones for product_taxes in the PREDICTION CASE : 9465
+Number of commun one values for product_taxes : 2880
+The similarity of the product_taxes column is:  93.81038814979323 %

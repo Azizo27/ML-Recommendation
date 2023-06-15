@@ -1,0 +1,342 @@
+Importing libraries...
+Loading data...
+Data loaded. Concatenating chunks...
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 13647309 entries, 0 to 13647308
+Data columns (total 48 columns):
+ #   Column                 Dtype
+---  ------                 -----
+ 0   fecha_dato             object
+ 1   ncodpers               int64
+ 2   ind_empleado           object
+ 3   pais_residencia        object
+ 4   sexo                   object
+ 5   age                    object
+ 6   fecha_alta             object
+ 7   ind_nuevo              float64
+ 8   antiguedad             object
+ 9   indrel                 float64
+ 10  ult_fec_cli_1t         object
+ 11  indrel_1mes            object
+ 12  tiprel_1mes            object
+ 13  indresi                object
+ 14  indext                 object
+ 15  conyuemp               object
+ 16  canal_entrada          object
+ 17  indfall                object
+ 18  tipodom                float64
+ 19  cod_prov               float64
+ 20  nomprov                object
+ 21  ind_actividad_cliente  float64
+ 22  renta                  float64
+ 23  segmento               object
+ 24  ind_ahor_fin_ult1      int64
+ 25  ind_aval_fin_ult1      int64
+ 26  ind_cco_fin_ult1       int64
+ 27  ind_cder_fin_ult1      int64
+ 28  ind_cno_fin_ult1       int64
+ 29  ind_ctju_fin_ult1      int64
+ 30  ind_ctma_fin_ult1      int64
+ 31  ind_ctop_fin_ult1      int64
+ 32  ind_ctpp_fin_ult1      int64
+ 33  ind_deco_fin_ult1      int64
+ 34  ind_deme_fin_ult1      int64
+ 35  ind_dela_fin_ult1      int64
+ 36  ind_ecue_fin_ult1      int64
+ 37  ind_fond_fin_ult1      int64
+ 38  ind_hip_fin_ult1       int64
+ 39  ind_plan_fin_ult1      int64
+ 40  ind_pres_fin_ult1      int64
+ 41  ind_reca_fin_ult1      int64
+ 42  ind_tjcr_fin_ult1      int64
+ 43  ind_valo_fin_ult1      int64
+ 44  ind_viv_fin_ult1       int64
+ 45  ind_nomina_ult1        float64
+ 46  ind_nom_pens_ult1      float64
+ 47  ind_recibo_ult1        int64
+dtypes: float64(8), int64(23), object(17)
+memory usage: 4.9+ GB
+Info: None
+Unique values in the 'fecha_dato' column:
+Number of null values in the column  fecha_dato  :   0
+['2015-01-28' '2015-02-28' '2015-03-28' '2015-04-28' '2015-05-28'
+ '2015-06-28' '2015-07-28' '2015-08-28' '2015-09-28' '2015-10-28'
+ '2015-11-28' '2015-12-28' '2016-01-28' '2016-02-28' '2016-03-28'
+ '2016-04-28' '2016-05-28']
+Unique values in the 'ncodpers' column:
+Number of null values in the column  ncodpers  :   0
+[1375586 1050611 1050612 ... 1173729 1164094 1550586]
+Unique values in the 'ind_empleado' column:
+Number of null values in the column  ind_empleado  :   27734
+['N' nan 'A' 'B' 'F' 'S']
+Unique values in the 'pais_residencia' column:
+Number of null values in the column  pais_residencia  :   27734
+['ES' nan 'CA' 'CH' 'CL' 'IE' 'AT' 'NL' 'FR' 'GB' 'DE' 'DO' 'BE' 'AR' 'VE'
+ 'US' 'MX' 'BR' 'IT' 'EC' 'PE' 'CO' 'HN' 'FI' 'SE' 'AL' 'PT' 'MZ' 'CN'
+ 'TW' 'PL' 'IN' 'CR' 'NI' 'HK' 'AD' 'CZ' 'AE' 'MA' 'GR' 'PR' 'RO' 'IL'
+ 'RU' 'GT' 'GA' 'NO' 'SN' 'MR' 'UA' 'BG' 'PY' 'EE' 'SV' 'ET' 'CM' 'SA'
+ 'CI' 'QA' 'LU' 'PA' 'BA' 'BO' 'AU' 'BY' 'KE' 'SG' 'HR' 'MD' 'SK' 'TR'
+ 'AO' 'CU' 'GQ' 'EG' 'ZA' 'DK' 'UY' 'GE' 'TH' 'DZ' 'LB' 'JP' 'NG' 'PK'
+ 'TN' 'TG' 'KR' 'GH' 'RS' 'VN' 'PH' 'KW' 'NZ' 'MM' 'KH' 'GI' 'SL' 'GN'
+ 'GW' 'OM' 'CG' 'LV' 'LT' 'ML' 'MK' 'HU' 'IS' 'LY' 'CF' 'GM' 'KZ' 'CD'
+ 'BZ' 'ZW' 'DJ' 'JM' 'BM' 'MT']
+Unique values in the 'sexo' column:
+Number of null values in the column  sexo  :   27804
+['H' 'V' nan]
+Unique values in the 'age' column:
+Number of null values in the column  age  :   0
+[' 35' ' 23' ' 22' ' 24' ' 65' ' 28' ' 25' ' 26' ' 53' ' 27' ' 32' ' 37'
+ ' 31' ' 39' ' 63' ' 33' ' 55' ' 42' ' 58' ' 38' ' 50' ' 30' ' 45' ' 44'
+ ' 36' ' 29' ' 60' ' 57' ' 67' ' 47' ' NA' ' 34' ' 48' ' 46' ' 54' ' 84'
+ ' 15' ' 12' '  8' '  6' ' 83' ' 40' ' 77' ' 69' ' 52' ' 59' ' 43' ' 10'
+ '  9' ' 49' ' 41' ' 51' ' 78' ' 16' ' 11' ' 73' ' 62' ' 66' ' 17' ' 68'
+ ' 82' ' 95' ' 96' ' 56' ' 61' ' 79' ' 72' ' 14' ' 19' ' 13' ' 86' ' 64'
+ ' 20' ' 89' ' 71' '  7' ' 70' ' 74' ' 21' ' 18' ' 75' '  4' ' 80' ' 81'
+ '  5' ' 76' ' 92' ' 93' ' 85' ' 91' ' 87' ' 90' ' 94' ' 99' ' 98' ' 88'
+ ' 97' '100' '101' '106' '103' '  3' '  2' '102' '104' '111' '107' '109'
+ '105' '112' '115' '110' '116' '108' '113' 33 52 40 58 38 92 50 84 81 71
+ 37 21 30 54 46 67 39 55 60 45 68 51 31 63 42 64 74 49 56 59 77 86 48 36
+ 62 70 43 14 12 79 44 47 53 96 75 24 20 83 57 72 61 41 29 69 35 66 73 76
+ 65 34 22 13 16 11 18 23 28 78 32 17 91 15 89 80 87 93 25 97 85 94 88 82
+ 109 101 90 27 111 26 19 102 95 99 98 100 108 10 107 103 9 113 104 110 105
+ 2 112 106 3 8 7 6 126 115 117 163 116 5 4 127 114 164]
+Unique values in the 'fecha_alta' column:
+Number of null values in the column  fecha_alta  :   27734
+['2015-01-12' '2012-08-10' nan ... '2016-05-25' '2016-05-01' '2016-05-15']
+Unique values in the 'ind_nuevo' column:
+Number of null values in the column  ind_nuevo  :   27734
+[ 0. nan  1.]
+Unique values in the 'antiguedad' column:
+Number of null values in the column  antiguedad  :   0
+['      6' '     35' '     34' '     NA' '     33' '     31' '     21'
+ '     16' '     27' '      9' '     22' '     13' '     29' '      8'
+ '     11' '     10' '     28' '     24' '      7' '     25' '     14'
+ '     26' '     12' '     23' '      1' '     18' '      4' '      3'
+ '     17' '     32' '     30' '     20' '     15' '     19' '    157'
+ '     36' '      5' '     40' '     38' '     37' '     39' '      0'
+ '      2' '     47' '     44' '     42' '     46' '     45' '     43'
+ '     41' '     57' '     48' '     52' '     49' '     50' '     56'
+ '     58' '     51' '     55' '     54' '     53' '     59' '     62'
+ '     61' '     60' '     63' '    139' '    165' '    118' '    164'
+ '    142' '     94' '    159' '    143' '    105' '    151' '    162'
+ '    137' '    150' '    128' '    122' '    156' '    119' '    160'
+ '     79' '     95' '    132' '    161' '     98' '    127' '     72'
+ '    155' '    108' '    163' '    102' '    148' '    115' '    146'
+ '    107' '     81' '    216' '    135' '     92' '    121' '    198'
+ '    134' '     93' '    140' '    110' '    120' '    147' '    116'
+ '     64' '     77' '     85' '     99' '     78' '    100' '    113'
+ '    154' '    166' '    133' '    124' '    141' '     66' '    117'
+ '     86' '    193' '     80' '    144' '     87' '    126' '    158'
+ '    101' '    235' '     88' '    145' '    103' '    149' '    109'
+ '    131' '     97' '     68' '     84' '    232' '    125' '    177'
+ '    112' '     96' '     69' '    171' '    167' '    104' '     76'
+ '     82' '    152' '     70' '    138' '    169' '     65' '    129'
+ '    190' '    114' '    111' '    176' '    153' '     89' '    136'
+ '     83' '    123' '    187' '    106' '    231' '    189' '    217'
+ '    172' '    199' '    173' '    174' '    209' '    180' '    178'
+ '     91' '    168' '    130' '    225' '     67' '     73' '    183'
+ '     74' '    206' '     71' '    179' '    184' '    192' '     90'
+ '    194' '    182' '    188' '    213' '    185' '    195' '    186'
+ '    207' '    208' '     75' '    175' '    201' '    203' '    212'
+ '    215' '    170' '    228' '    214' '    202' '    196' '    181'
+ '    211' '    191' '    205' '    200' '    227' '    218' '    219'
+ '    226' '    224' '    210' '    242' '    223' '    237' '    204'
+ '    233' '    220' '    222' '    241' '    197' '    221' '    229'
+ '    234' '    240' '    243' '    230' '    238' '    246' '    236'
+ '    244' '    239' '    245' '-999999' 99 108 97 66 95 8 105 65 103 53
+ 107 102 80 36 1 37 87 39 82 106 61 93 35 101 81 89 60 12 69 62 48 104 33
+ 84 29 100 13 76 22 54 96 94 64 88 7 14 18 63 49 46 9 58 52 59 71 30 109
+ 77 47 6 98 50 11 110 38 5 2 21 27 92 34 15 44 42 41 51 75 67 28 0 19 17
+ 78 10 4 79 85 3 32 56 57 25 20 45 24 72 91 68 16 43 40 86 134 70 83 112
+ 73 55 31 90 74 23 26 195 113 127 126 122 120 125 121 136 117 123 118 160
+ 111 124 145 116 115 204 163 128 141 119 135 188 114 165 129 173 172 131
+ 202 151 130 175 147 199 179 162 148 156 174 152 150 196 168 161 157 177
+ 180 184 164 225 140 133 132 149 227 138 171 190 143 189 176 169 237 232
+ 210 200 154 181 155 207 193 146 201 208 142 185 182 153 198 178 186 166
+ 238 159 170 183 241 137 214 139 221 187 191 167 206 205 144 234 158 197
+ 211 212 194 229 216 235 -999999 220 236 215 228 218 192 231 209 217 223
+ 222 230 203 226 233 219 224 240 213 239 242 243 244 246 245 247 248 249
+ 250 251 252 253 254 255 256]
+Unique values in the 'indrel' column:
+Number of null values in the column  indrel  :   27734
+[ 1. nan 99.]
+Unique values in the 'ult_fec_cli_1t' column:
+Number of null values in the column  ult_fec_cli_1t  :   13622516
+[nan '2015-07-02' '2015-07-23' '2015-07-06' '2015-07-30' '2015-07-20'
+ '2015-07-08' '2015-07-22' '2015-07-17' '2015-07-09' '2015-07-03'
+ '2015-07-29' '2015-07-13' '2015-07-21' '2015-07-27' '2015-07-14'
+ '2015-07-01' '2015-07-24' '2015-07-15' '2015-07-16' '2015-07-28'
+ '2015-07-07' '2015-07-10' '2015-08-21' '2015-08-19' '2015-08-25'
+ '2015-08-14' '2015-08-24' '2015-08-17' '2015-08-18' '2015-08-10'
+ '2015-08-13' '2015-08-27' '2015-08-03' '2015-08-06' '2015-08-20'
+ '2015-08-26' '2015-08-28' '2015-08-05' '2015-08-11' '2015-08-07'
+ '2015-08-04' '2015-08-12' '2015-09-17' '2015-09-01' '2015-09-18'
+ '2015-09-03' '2015-09-02' '2015-09-14' '2015-09-16' '2015-09-29'
+ '2015-09-28' '2015-09-09' '2015-09-22' '2015-09-08' '2015-09-11'
+ '2015-09-21' '2015-09-04' '2015-09-25' '2015-09-07' '2015-09-10'
+ '2015-09-23' '2015-09-24' '2015-09-15' '2015-10-08' '2015-10-07'
+ '2015-10-13' '2015-10-26' '2015-10-29' '2015-10-05' '2015-10-28'
+ '2015-10-09' '2015-10-22' '2015-10-20' '2015-10-15' '2015-10-06'
+ '2015-10-01' '2015-10-21' '2015-10-16' '2015-10-27' '2015-10-19'
+ '2015-10-23' '2015-10-02' '2015-10-14' '2015-11-23' '2015-11-24'
+ '2015-11-12' '2015-11-04' '2015-11-13' '2015-11-25' '2015-11-19'
+ '2015-11-20' '2015-11-03' '2015-11-16' '2015-11-17' '2015-11-11'
+ '2015-11-27' '2015-11-18' '2015-11-10' '2015-11-26' '2015-11-02'
+ '2015-11-05' '2015-11-06' '2015-11-09' '2015-12-21' '2015-12-18'
+ '2015-12-28' '2015-12-24' '2015-12-04' '2015-12-29' '2015-12-16'
+ '2015-12-11' '2015-12-30' '2015-12-15' '2015-12-01' '2015-12-09'
+ '2015-12-10' '2015-12-17' '2015-12-02' '2015-12-14' '2015-12-03'
+ '2015-12-22' '2015-12-23' '2015-12-07' '2016-01-08' '2016-01-14'
+ '2016-01-13' '2016-01-28' '2016-01-05' '2016-01-19' '2016-01-12'
+ '2016-01-18' '2016-01-21' '2016-01-22' '2016-01-07' '2016-01-20'
+ '2016-01-26' '2016-01-15' '2016-01-27' '2016-01-25' '2016-01-11'
+ '2016-01-04' '2016-02-23' '2016-02-19' '2016-02-18' '2016-02-26'
+ '2016-02-12' '2016-02-24' '2016-02-09' '2016-02-08' '2016-02-11'
+ '2016-02-05' '2016-02-04' '2016-02-03' '2016-02-15' '2016-02-22'
+ '2016-02-10' '2016-02-16' '2016-02-01' '2016-02-17' '2016-02-02'
+ '2016-02-25' '2016-03-07' '2016-03-29' '2016-03-10' '2016-03-18'
+ '2016-03-14' '2016-03-22' '2016-03-08' '2016-03-21' '2016-03-30'
+ '2016-03-01' '2016-03-23' '2016-03-02' '2016-03-24' '2016-03-03'
+ '2016-03-09' '2016-03-11' '2016-03-04' '2016-03-16' '2016-03-28'
+ '2016-03-15' '2016-03-17' '2016-04-22' '2016-04-01' '2016-04-06'
+ '2016-04-12' '2016-04-05' '2016-04-15' '2016-04-13' '2016-04-19'
+ '2016-04-04' '2016-04-18' '2016-04-26' '2016-04-11' '2016-04-25'
+ '2016-04-27' '2016-04-08' '2016-04-07' '2016-04-21' '2016-04-28'
+ '2016-04-20' '2016-04-14' '2016-05-23' '2016-05-05' '2016-05-17'
+ '2016-05-19' '2016-05-12' '2016-05-06' '2016-05-03' '2016-05-20'
+ '2016-05-02' '2016-05-16' '2016-05-18' '2016-05-04' '2016-05-13'
+ '2016-05-24' '2016-05-27' '2016-05-10' '2016-05-30' '2016-05-25'
+ '2016-05-11' '2016-05-09' '2016-05-26']
+Unique values in the 'indrel_1mes' column:
+Number of null values in the column  indrel_1mes  :   149781
+[1.0 nan 3.0 2.0 '1' '1.0' '3.0' '2.0' '3' '4.0' 'P' '4' '2' 4.0]
+Unique values in the 'tiprel_1mes' column:
+Number of null values in the column  tiprel_1mes  :   149781
+['A' 'I' nan 'P' 'R' 'N']
+Unique values in the 'indresi' column:
+Number of null values in the column  indresi  :   27734
+['S' nan 'N']
+Unique values in the 'indext' column:
+Number of null values in the column  indext  :   27734
+['N' 'S' nan]
+Unique values in the 'conyuemp' column:
+Number of null values in the column  conyuemp  :   13645501
+[nan 'N' 'S']
+Unique values in the 'canal_entrada' column:
+Number of null values in the column  canal_entrada  :   186126
+['KHL' 'KHE' 'KHD' 'KFA' 'KFC' 'KAT' nan 'KAZ' 'RED' 'KHC' 'KHK' 'KGN'
+ 'KHM' 'KHO' 'KDH' 'KEH' 'KAD' 'KBG' 'KGC' 'KHF' 'KFK' 'KHN' 'KHA' 'KAF'
+ 'KGX' 'KFD' 'KAG' 'KFG' 'KAB' 'KCC' 'KAE' 'KAH' 'KAR' 'KFJ' 'KFL' 'KAI'
+ 'KFU' 'KAQ' 'KFS' 'KAA' 'KFP' 'KAJ' 'KFN' 'KGV' 'KGY' 'KFF' 'KAP' 'KDE'
+ 'KFV' '013' 'K00' 'KAK' 'KCK' 'KCL' 'KAY' 'KBU' 'KDR' 'KAC' 'KDT' 'KCG'
+ 'KDO' 'KDY' 'KBQ' 'KDA' 'KBO' 'KCI' 'KEC' 'KBZ' 'KES' 'KDX' 'KAS' '007'
+ 'KEU' 'KCA' 'KAL' 'KDC' 'KAW' 'KCS' 'KCB' 'KDU' 'KDQ' 'KCN' 'KCM' '004'
+ 'KCH' 'KCD' 'KCE' 'KEV' 'KBL' 'KEA' 'KBH' 'KDV' 'KFT' 'KEY' 'KAO' 'KEJ'
+ 'KEO' 'KEI' 'KEW' 'KDZ' 'KBV' 'KBR' 'KBF' 'KDP' 'KCO' 'KCF' 'KCV' 'KAM'
+ 'KEZ' 'KBD' 'KAN' 'KBY' 'KCT' 'KDD' 'KBW' 'KCU' 'KBX' 'KDB' 'KBS' 'KBE'
+ 'KCX' 'KBP' 'KBN' 'KEB' 'KDS' 'KEL' 'KDG' 'KDF' 'KEF' 'KCP' 'KDM' 'KBB'
+ 'KDW' 'KBJ' 'KFI' 'KBM' 'KEG' 'KEN' 'KEQ' 'KAV' 'KFH' 'KFM' 'KAU' 'KED'
+ 'KFR' 'KEK' 'KFB' 'KGW' 'KFE' 'KGU' 'KDI' 'KDN' 'KEE' 'KCR' 'KCQ' 'KEM'
+ 'KCJ' 'KHQ' 'KDL' '025' 'KHP' 'KHR' 'KHS']
+Unique values in the 'indfall' column:
+Number of null values in the column  indfall  :   27734
+['N' nan 'S']
+Unique values in the 'tipodom' column:
+Number of null values in the column  tipodom  :   27735
+[ 1. nan]
+Unique values in the 'cod_prov' column:
+Number of null values in the column  cod_prov  :   93591
+[29. 13. 50. 45. 24. 20. 10. 17. 49.  8. 37.  9. 22. 31.  5. 40. 27. 25.
+ 28.  3. 42. 41. 39.  7. 47. 36. 46. 44. 15. 32. 23. 16. 48. 12. 26.  2.
+  6. 30. 11. nan  4. 19. 34. 35. 14. 21. 18. 33. 38. 52. 43.  1. 51.]
+Unique values in the 'nomprov' column:
+Number of null values in the column  nomprov  :   93591
+['MALAGA' 'CIUDAD REAL' 'ZARAGOZA' 'TOLEDO' 'LEON' 'GIPUZKOA' 'CACERES'
+ 'GIRONA' 'ZAMORA' 'BARCELONA' 'SALAMANCA' 'BURGOS' 'HUESCA' 'NAVARRA'
+ 'AVILA' 'SEGOVIA' 'LUGO' 'LERIDA' 'MADRID' 'ALICANTE' 'SORIA' 'SEVILLA'
+ 'CANTABRIA' 'BALEARS, ILLES' 'VALLADOLID' 'PONTEVEDRA' 'VALENCIA'
+ 'TERUEL' 'CORUÑA, A' 'OURENSE' 'JAEN' 'CUENCA' 'BIZKAIA' 'CASTELLON'
+ 'RIOJA, LA' 'ALBACETE' 'BADAJOZ' 'MURCIA' 'CADIZ' nan 'ALMERIA'
+ 'GUADALAJARA' 'PALENCIA' 'PALMAS, LAS' 'CORDOBA' 'HUELVA' 'GRANADA'
+ 'ASTURIAS' 'SANTA CRUZ DE TENERIFE' 'MELILLA' 'TARRAGONA' 'ALAVA' 'CEUTA']
+Unique values in the 'ind_actividad_cliente' column:
+Number of null values in the column  ind_actividad_cliente  :   27734
+[ 1.  0. nan]
+Unique values in the 'renta' column:
+Number of null values in the column  renta  :   2794375
+[ 87218.1   35548.74 122179.11 ...  63867.66  34341.18  89018.37]
+Unique values in the 'segmento' column:
+Number of null values in the column  segmento  :   189368
+['02 - PARTICULARES' '03 - UNIVERSITARIO' nan '01 - TOP']
+Unique values in the 'ind_ahor_fin_ult1' column:
+Number of null values in the column  ind_ahor_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_aval_fin_ult1' column:
+Number of null values in the column  ind_aval_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_cco_fin_ult1' column:
+Number of null values in the column  ind_cco_fin_ult1  :   0
+[1 0]
+Unique values in the 'ind_cder_fin_ult1' column:
+Number of null values in the column  ind_cder_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_cno_fin_ult1' column:
+Number of null values in the column  ind_cno_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_ctju_fin_ult1' column:
+Number of null values in the column  ind_ctju_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_ctma_fin_ult1' column:
+Number of null values in the column  ind_ctma_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_ctop_fin_ult1' column:
+Number of null values in the column  ind_ctop_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_ctpp_fin_ult1' column:
+Number of null values in the column  ind_ctpp_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_deco_fin_ult1' column:
+Number of null values in the column  ind_deco_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_deme_fin_ult1' column:
+Number of null values in the column  ind_deme_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_dela_fin_ult1' column:
+Number of null values in the column  ind_dela_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_ecue_fin_ult1' column:
+Number of null values in the column  ind_ecue_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_fond_fin_ult1' column:
+Number of null values in the column  ind_fond_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_hip_fin_ult1' column:
+Number of null values in the column  ind_hip_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_plan_fin_ult1' column:
+Number of null values in the column  ind_plan_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_pres_fin_ult1' column:
+Number of null values in the column  ind_pres_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_reca_fin_ult1' column:
+Number of null values in the column  ind_reca_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_tjcr_fin_ult1' column:
+Number of null values in the column  ind_tjcr_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_valo_fin_ult1' column:
+Number of null values in the column  ind_valo_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_viv_fin_ult1' column:
+Number of null values in the column  ind_viv_fin_ult1  :   0
+[0 1]
+Unique values in the 'ind_nomina_ult1' column:
+Number of null values in the column  ind_nomina_ult1  :   16063
+[ 0.  1. nan]
+Unique values in the 'ind_nom_pens_ult1' column:
+Number of null values in the column  ind_nom_pens_ult1  :   16063
+[ 0.  1. nan]
+Unique values in the 'ind_recibo_ult1' column:
+Number of null values in the column  ind_recibo_ult1  :   0
+[0 1]

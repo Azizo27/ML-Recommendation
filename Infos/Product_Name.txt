@@ -1,0 +1,24 @@
+product_savings_account, Accuracy: 0.9998754884683166
+product_guarantees, Accuracy: 0.9999904221898706
+product_current_accounts, Accuracy: 0.7533426557351927
+product_derivada_account, Accuracy: 0.9994253313922304
+product_payroll_account, Accuracy: 0.8776913646463872
+product_junior_account, 0.9996743544555973
+product_mas_particular_account, Accuracy: 0.9880373151482645
+product_particular_account, Accuracy: 0.84389127269941
+product_particular_plus_account, Accuracy: 0.939611907133553
+ product_short_term_deposits, Accuracy: 0.9963795877710521
+product_medium_term_deposits, Accuracy: 0.9975001915562026
+product_long_term_deposits, Accuracy: 0.9424182055014941
+product_e_account, Accuracy: 0.8878342655735193
+product_funds, Accuracy: 0.9739770898781702
+product_mortgage, 0.991552371465788
+product_first_pensions, Accuracy: 0.9869837560340203
+product_loans, Accuracy: 0.9964657880622174
+product_taxes, Accuracy: 0.9264232625852425
+product_credit_card, Accuracy: 0.9316144356754271
+ product_securities, Accuracy: 0.9644184353689372
+ product_home_account, Accuracy: 0.9942724695425638
+ product_payroll, Accuracy: 0.9200731744693893
+ product_second_pensions, Accuracy: 0.9179277450003831
+ product_direct_debit, Accuracy: 0.8197839246034787

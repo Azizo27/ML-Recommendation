@@ -1,5 +1,4 @@
 *.csv
-Infos/
 __pycache__/
 *.pkl
 .vscode/

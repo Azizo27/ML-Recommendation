@@ -1,10 +1,12 @@
 import pandas as pd
 from LoadCsv import LoadCsv
 import os
-
+import pickle
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import math
+from TransformDfToPredict import TransformDfToPredict
+from EncodingFeatures import EncodingAllFeatures
 
 def DrawSimilarityBar(all_target, all_percentage):
     cmap = mcolors.LinearSegmentedColormap.from_list('CustomMap', ['blue', 'red'])
@@ -50,14 +52,15 @@ def CountingZerosAndOne(df_test, df_predicted, target):
     except KeyError:
         commun_one_values = 0
     
-
-    print("Number of zeros for "+target + " in the REAL CASE :", zero_count)
-    print("Number of zeros for "+target + " in the PREDICTION CASE :", pred_zero_count)
-    print("Number of commun zero values for "+target+" :", commun_zero_values)
-    
-    print("\nNumber of ones for "+target + " in the REAL CASE :", one_count)
-    print("Number of ones for "+target + " in the PREDICTION CASE :",pred_one_count)
-    print("Number of commun one values for "+target+" :", commun_one_values)
+    filename = "output.txt"
+    with open(filename, "a") as f:
+        print("\n\nFOR " + target + ":", file=f)
+        print("Number of zeros for " + target + " in the REAL CASE:", zero_count, file=f)
+        print("Number of zeros for " + target + " in the PREDICTION CASE:", pred_zero_count, file=f)
+        print("Number of commun zero values for " + target + ":", commun_zero_values, file=f)
+        print("\nNumber of ones for " + target + " in the REAL CASE:", one_count, file=f)
+        print("Number of ones for " + target + " in the PREDICTION CASE:", pred_one_count, file=f)
+        print("Number of commun one values for " + target + ":", commun_one_values, file=f)
     
 def CompareWithPrediction(dfWithRealValue):
     all_subfolders = [name for name in os.listdir(os.getcwd()) if os.path.isdir(os.path.join(os.getcwd(), name)) and name.startswith("product_")]
@@ -83,6 +86,41 @@ def CompareWithPrediction(dfWithRealValue):
     DrawSimilarityBar(all_subfolders, all_percentage)
 
 
+def CompareUsingModel(dfWithRealValue, dfToPredict):
+    all_subfolders = [name for name in os.listdir(os.getcwd()) if os.path.isdir(os.path.join(os.getcwd(), name)) and name.startswith("product_")]
+    all_percentage = []
+    df_test = dfWithRealValue.copy()
+    dataToPredict = TransformDfToPredict(dfToPredict)
 
-df= LoadCsv("Cleaned_Renamed_train_May2016.csv", "Cleaned_Renamed_train_May2016.csv")
-CompareWithPrediction(df)
+    for target in all_subfolders:
+        model_file_name = 'model_' + target + '.pkl'
+        
+        with open(os.path.join(target, model_file_name), "rb") as file:
+            model = pickle.load(file)
+
+        
+        print("Predicting prediction of test for being buyed...")
+        predictions = model.predict(dataToPredict)
+        dfToPredict[target] = predictions
+        
+        
+        CountingZerosAndOne(df_test, dfToPredict, target)
+        
+        buyed1 = dfToPredict[target]
+        buyed2 = df_test[target]
+
+        similarity = (buyed1 == buyed2).mean() 
+        percentage = similarity*100
+        
+        print("The similarity of the "+target+" column is: ",percentage, "%")
+        all_percentage.append(similarity)
+    
+    DrawSimilarityBar(all_subfolders, all_percentage)
+    
+    
+dfWithRealValue= LoadCsv("Cleaned_Renamed_Compare_April2016.csv", "Cleaned_Renamed_Compare_April2016.csv")
+dfToPredict = dfWithRealValue.copy()
+columns_to_remove = [col for col in dfWithRealValue.columns if "product_" in col]
+dfToPredict.drop(columns=columns_to_remove, inplace=True)
+
+CompareUsingModel(dfWithRealValue, dfToPredict)

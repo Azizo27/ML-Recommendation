@@ -1,0 +1,244 @@
+Loading data...
+Data loaded. Concatenating chunks...
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10852934 entries, 0 to 10852933
+Data columns (total 47 columns):
+ #   Column                                        Dtype
+---  ------                                        -----
+ 0   date                                          object
+ 1   customer_code                                 int64
+ 2   employee_index                                object
+ 3   country_residence                             object
+ 4   gender                                        object
+ 5   age                                           int64
+ 6   customer_start_date                           object
+ 7   new_customer_index                            int64
+ 8   customer_seniority                            int64
+ 9   primary_customer_index                        int64
+ 10  customer_type_at_beginning_of_month           object
+ 11  customer_relation_type_at_beginning_of_month  object
+ 12  residence_index                               object
+ 13  foreigner_index                               object
+ 14  spouse_index                                  object
+ 15  channel_used_by_customer_to_join              object
+ 16  deceased_index                                object
+ 17  address_type                                  int64
+ 18  province_code                                 int64
+ 19  province_name                                 object
+ 20  activity_index                                int64
+ 21  gross_income                                  float64
+ 22  segmentation                                  object
+ 23  product_savings_account                       int64
+ 24  product_guarantees                            int64
+ 25  product_current_accounts                      int64
+ 26  product_derivada_account                      int64
+ 27  product_payroll_account                       int64
+ 28  product_junior_account                        int64
+ 29  product_mas_particular_account                int64
+ 30  product_particular_account                    int64
+ 31  product_particular_plus_account               int64
+ 32  product_short_term_deposits                   int64
+ 33  product_medium_term_deposits                  int64
+ 34  product_long_term_deposits                    int64
+ 35  product_e_account                             int64
+ 36  product_funds                                 int64
+ 37  product_mortgage                              int64
+ 38  product_first_pensions                        int64
+ 39  product_loans                                 int64
+ 40  product_taxes                                 int64
+ 41  product_credit_card                           int64
+ 42  product_securities                            int64
+ 43  product_home_account                          int64
+ 44  product_payroll                               int64
+ 45  product_second_pensions                       int64
+ 46  product_direct_debit                          int64
+dtypes: float64(1), int64(32), object(14)
+memory usage: 3.8+ GB
+Info: None
+Unique values in the 'date' column:
+Number of null values in the column  date  :   0
+['2015-01-28' '2015-02-28' '2015-03-28' '2015-04-28' '2015-05-28'
+ '2015-06-28' '2015-07-28' '2015-08-28' '2015-09-28' '2015-10-28'
+ '2015-11-28' '2015-12-28' '2016-01-28' '2016-02-28' '2016-03-28'
+ '2016-04-28' '2016-05-28']
+Unique values in the 'customer_code' column:
+Number of null values in the column  customer_code  :   0
+[1375586 1050611 1050612 ... 1432584 1346412 1355691]
+Unique values in the 'employee_index' column:
+Number of null values in the column  employee_index  :   0
+['N' 'A' 'F' 'B' 'S']
+Unique values in the 'country_residence' column:
+Number of null values in the column  country_residence  :   0
+['ES' 'PA' 'MX' 'IT' 'BE' 'DE' 'BO' 'PY' 'RO' 'GB' 'US' 'CH' 'QA' 'JP'
+ 'DZ' 'BM' 'LU' 'CA' 'PE' 'PT' 'OM' 'FR' 'NL' 'AD' 'CL']
+Unique values in the 'gender' column:
+Number of null values in the column  gender  :   0
+['H' 'V' 'U']
+Unique values in the 'age' column:
+Number of null values in the column  age  :   0
+[ 35  23  22  65  24  28  25  26  53  27  32  37  31  39  63  33  55  42
+  38  50  30  45  44  36  29  60  57  67  47  34  48  46  54  84  15  12
+   8   6  83  77  69  52  59  43  10   9  49  41  58  40  51  78  16  73
+  66  62  17  68  82  95  96  56  61  79  72  14  11  19  13  86  64  20
+  71   7  70  74  21  18  75   4   5  81  80  76  92  89  85  91  87  90
+  94  99  93  98  88  97 100   3   2]
+Unique values in the 'customer_start_date' column:
+Number of null values in the column  customer_start_date  :   0
+['2015-01-12' '2012-08-10' '2012-08-16' ... '2015-09-12' '2015-09-04'
+ '2015-09-06']
+Unique values in the 'new_customer_index' column:
+Number of null values in the column  new_customer_index  :   0
+[0 1]
+Unique values in the 'customer_seniority' column:
+Number of null values in the column  customer_seniority  :   0
+[  6  35  34  33  31  21  27   9  22  13  29   8  11  10  28  24  25  14
+  26  12  16  23   7   1  18   4   3  17  32  30  20 157  36   5  40  19
+  38  37  39  15   0   2  47  44  42  46  45  43  41  57  52  49  50  56
+  58  51  48  55  54  53  59  62  61  60  63 139 165 118 164 159 143 105
+ 151 162 137 150 128 122 156 119 160  79  95 132 161 127  72 155 108 163
+ 102 148 115 146 107  81 135  92 121 198 134  93 140 110 120 147 116  64
+  77  85  99  78  94 113 154 133 124 141  66 117  86 193 144  87 126 158
+ 101 235 145 103 149 109 131  97 166  68  84 232 125 177 112  69 171 142
+ 104  76  82  70 138 169  65 129 100 114 176 153  89 136  80  83 123 187
+ 106 231 189 111  88 217 172 173 167 174 209 180 152 216  98  91 199 168
+  96 130 225  67 178  73 183  74 206  71 179 184 192 190  90 194 182 185
+ 195 186 207 208  75 175 201 203 212 215 170 228 214 202 196 181 191 200
+ 188 227 219 226 205 224 210 242 223 233 220 218 222 241 204 211 197 213
+ 237 221 229 234 240 243 230 238 246 236 244 239 245 247 248 249 250 251
+ 252 253 254 255 256]
+Unique values in the 'primary_customer_index' column:
+Number of null values in the column  primary_customer_index  :   0
+[ 1 99]
+Unique values in the 'customer_type_at_beginning_of_month' column:
+Number of null values in the column  customer_type_at_beginning_of_month  :   0
+[1 3 '1' '3' 'U' '2' 'P' '4' 2]
+Unique values in the 'customer_relation_type_at_beginning_of_month' column:
+Number of null values in the column  customer_relation_type_at_beginning_of_month  :   0
+['A' 'I' 'P' 'U' 'R']
+Unique values in the 'residence_index' column:
+Number of null values in the column  residence_index  :   0
+['S' 'N']
+Unique values in the 'foreigner_index' column:
+Number of null values in the column  foreigner_index  :   0
+['N' 'S']
+Unique values in the 'spouse_index' column:
+Number of null values in the column  spouse_index  :   0
+['N' 'S']
+Unique values in the 'channel_used_by_customer_to_join' column:
+Number of null values in the column  channel_used_by_customer_to_join  :   0
+['KHL' 'KHE' 'KHD' 'KFA' 'KFC' 'KAT' 'RED' 'KAZ' 'KHC' 'KHK' 'KHM' 'KHO'
+ 'KDH' 'KEH' 'KAD' 'KBG' 'KGC' 'UNK' 'KHF' 'KFK' 'KHN' 'KHA' 'KAF' 'KGX'
+ 'KFD' 'KAG' 'KFG' 'KAB' 'KCC' 'KAE' 'KAH' 'KAR' 'KFJ' 'KFU' 'KAQ' 'KFS'
+ 'KAA' 'KFP' 'KAJ' 'KFN' 'KGV' 'KGY' 'KAP' 'KFF' 'KFL' 'KAI' 'KDE' 'KFV'
+ '013' 'K00' 'KAK' 'KCK' 'KCL' 'KAY' 'KBU' 'KDR' 'KDT' 'KCG' 'KDO' 'KBQ'
+ 'KDA' 'KBO' 'KEC' 'KES' 'KBZ' 'KAS' '007' 'KEU' 'KCA' 'KAL' 'KDC' 'KAW'
+ 'KCI' 'KAC' 'KCS' 'KCB' 'KDU' 'KDQ' 'KCN' 'KCM' '004' 'KCH' 'KCD' 'KCE'
+ 'KDY' 'KEA' 'KBL' 'KBH' 'KDV' 'KFT' 'KEY' 'KAO' 'KEJ' 'KEO' 'KEV' 'KEI'
+ 'KEW' 'KDZ' 'KBV' 'KBR' 'KBF' 'KDP' 'KCO' 'KCF' 'KCV' 'KAM' 'KBD' 'KAN'
+ 'KBY' 'KDX' 'KDD' 'KBW' 'KBX' 'KCU' 'KDB' 'KBS' 'KBE' 'KCX' 'KBP' 'KEB'
+ 'KDS' 'KEL' 'KDG' 'KDF' 'KEF' 'KCP' 'KDM' 'KBB' 'KEZ' 'KBJ' 'KFI' 'KBM'
+ 'KDW' 'KEG' 'KEN' 'KEQ' 'KAV' 'KFH' 'KAU' 'KED' 'KEK' 'KGW' 'KFM' 'KFE'
+ 'KGU' 'KDI' 'KFB' 'KDN' 'KCR' 'KCQ' 'KEM' 'KEE' 'KCJ' 'KHQ' 'KDL' 'KBN'
+ 'KCT' 'KHP']
+Unique values in the 'deceased_index' column:
+Number of null values in the column  deceased_index  :   0
+['N' 'S']
+Unique values in the 'address_type' column:
+Number of null values in the column  address_type  :   0
+[1]
+Unique values in the 'province_code' column:
+Number of null values in the column  province_code  :   0
+[29 13 50 45 24 10 49 37 22  5 40 27  8 28  3 42 41 39  7 47 36 46 44 15
+ 32 23 17 26  2  9 30 11  6 16  4 19 34 12 35 14 25 21 18 33 38 52 43 51
+ 31 20 99 48  1]
+Unique values in the 'province_name' column:
+Number of null values in the column  province_name  :   0
+['MALAGA' 'CIUDAD REAL' 'ZARAGOZA' 'TOLEDO' 'LEON' 'CACERES' 'ZAMORA'
+ 'SALAMANCA' 'HUESCA' 'AVILA' 'SEGOVIA' 'LUGO' 'BARCELONA' 'MADRID'
+ 'ALICANTE' 'SORIA' 'SEVILLA' 'CANTABRIA' 'BALEARS ILLES' 'VALLADOLID'
+ 'PONTEVEDRA' 'VALENCIA' 'TERUEL' 'CORUÑA A' 'OURENSE' 'JAEN' 'GIRONA'
+ 'RIOJA LA' 'ALBACETE' 'BURGOS' 'MURCIA' 'CADIZ' 'BADAJOZ' 'CUENCA'
+ 'ALMERIA' 'GUADALAJARA' 'PALENCIA' 'CASTELLON' 'PALMAS LAS' 'CORDOBA'
+ 'LERIDA' 'HUELVA' 'GRANADA' 'ASTURIAS' 'SANTA CRUZ DE TENERIFE' 'MELILLA'
+ 'TARRAGONA' 'CEUTA' 'NAVARRA' 'GIPUZKOA' 'UNKNOWN' 'BIZKAIA' 'ALAVA']
+Unique values in the 'activity_index' column:
+Number of null values in the column  activity_index  :   0
+[1 0]
+Unique values in the 'gross_income' column:
+Number of null values in the column  gross_income  :   0
+[ 87218.1   35548.74 122179.11 ...  63867.66  34341.18  89018.37]
+Unique values in the 'segmentation' column:
+Number of null values in the column  segmentation  :   0
+['02 - PARTICULARES' '03 - UNIVERSITARIO' '01 - TOP']
+Unique values in the 'product_savings_account' column:
+Number of null values in the column  product_savings_account  :   0
+[0 1]
+Unique values in the 'product_guarantees' column:
+Number of null values in the column  product_guarantees  :   0
+[0 1]
+Unique values in the 'product_current_accounts' column:
+Number of null values in the column  product_current_accounts  :   0
+[1 0]
+Unique values in the 'product_derivada_account' column:
+Number of null values in the column  product_derivada_account  :   0
+[0 1]
+Unique values in the 'product_payroll_account' column:
+Number of null values in the column  product_payroll_account  :   0
+[0 1]
+Unique values in the 'product_junior_account' column:
+Number of null values in the column  product_junior_account  :   0
+[0 1]
+Unique values in the 'product_mas_particular_account' column:
+Number of null values in the column  product_mas_particular_account  :   0
+[0 1]
+Unique values in the 'product_particular_account' column:
+Number of null values in the column  product_particular_account  :   0
+[0 1]
+Unique values in the 'product_particular_plus_account' column:
+Number of null values in the column  product_particular_plus_account  :   0
+[0 1]
+Unique values in the 'product_short_term_deposits' column:
+Number of null values in the column  product_short_term_deposits  :   0
+[0 1]
+Unique values in the 'product_medium_term_deposits' column:
+Number of null values in the column  product_medium_term_deposits  :   0
+[0 1]
+Unique values in the 'product_long_term_deposits' column:
+Number of null values in the column  product_long_term_deposits  :   0
+[0 1]
+Unique values in the 'product_e_account' column:
+Number of null values in the column  product_e_account  :   0
+[0 1]
+Unique values in the 'product_funds' column:
+Number of null values in the column  product_funds  :   0
+[0 1]
+Unique values in the 'product_mortgage' column:
+Number of null values in the column  product_mortgage  :   0
+[0 1]
+Unique values in the 'product_first_pensions' column:
+Number of null values in the column  product_first_pensions  :   0
+[0 1]
+Unique values in the 'product_loans' column:
+Number of null values in the column  product_loans  :   0
+[0 1]
+Unique values in the 'product_taxes' column:
+Number of null values in the column  product_taxes  :   0
+[0 1]
+Unique values in the 'product_credit_card' column:
+Number of null values in the column  product_credit_card  :   0
+[0 1]
+Unique values in the 'product_securities' column:
+Number of null values in the column  product_securities  :   0
+[0 1]
+Unique values in the 'product_home_account' column:
+Number of null values in the column  product_home_account  :   0
+[0 1]
+Unique values in the 'product_payroll' column:
+Number of null values in the column  product_payroll  :   0
+[0 1]
+Unique values in the 'product_second_pensions' column:
+Number of null values in the column  product_second_pensions  :   0
+[0 1]
+Unique values in the 'product_direct_debit' column:
+Number of null values in the column  product_direct_debit  :   0
+[0 1]
