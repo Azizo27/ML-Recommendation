@@ -1,0 +1,240 @@
+
+
+FOR product_credit_card:
+Number of zeros for product_credit_card in the REAL CASE: 666882
+Number of zeros for product_credit_card in the PREDICTION CASE: 685367
+Number of commun zero values for product_credit_card: 662153
+
+Number of ones for product_credit_card in the REAL CASE: 32082
+Number of ones for product_credit_card in the PREDICTION CASE: 13597
+Number of commun one values for product_credit_card: 8868
+
+
+FOR product_current_accounts:
+Number of zeros for product_current_accounts in the REAL CASE: 273464
+Number of zeros for product_current_accounts in the PREDICTION CASE: 113421
+Number of commun zero values for product_current_accounts: 84555
+
+Number of ones for product_current_accounts in the REAL CASE: 425500
+Number of ones for product_current_accounts in the PREDICTION CASE: 585543
+Number of commun one values for product_current_accounts: 396634
+
+
+FOR product_derivada_account:
+Number of zeros for product_derivada_account in the REAL CASE: 698688
+Number of zeros for product_derivada_account in the PREDICTION CASE: 698955
+Number of commun zero values for product_derivada_account: 698686
+
+Number of ones for product_derivada_account in the REAL CASE: 276
+Number of ones for product_derivada_account in the PREDICTION CASE: 9
+Number of commun one values for product_derivada_account: 7
+
+
+FOR product_direct_debit:
+Number of zeros for product_direct_debit in the REAL CASE: 615230
+Number of zeros for product_direct_debit in the PREDICTION CASE: 630236
+Number of commun zero values for product_direct_debit: 591662
+
+Number of ones for product_direct_debit in the REAL CASE: 83734
+Number of ones for product_direct_debit in the PREDICTION CASE: 68728
+Number of commun one values for product_direct_debit: 45160
+
+
+FOR product_e_account:
+Number of zeros for product_e_account in the REAL CASE: 642575
+Number of zeros for product_e_account in the PREDICTION CASE: 663201
+Number of commun zero values for product_e_account: 631612
+
+Number of ones for product_e_account in the REAL CASE: 56389
+Number of ones for product_e_account in the PREDICTION CASE: 35763
+Number of commun one values for product_e_account: 24800
+
+
+FOR product_first_pensions:
+Number of zeros for product_first_pensions in the REAL CASE: 692498
+Number of zeros for product_first_pensions in the PREDICTION CASE: 697556
+Number of commun zero values for product_first_pensions: 692282
+
+Number of ones for product_first_pensions in the REAL CASE: 6466
+Number of ones for product_first_pensions in the PREDICTION CASE: 1408
+Number of commun one values for product_first_pensions: 1192
+
+
+FOR product_funds:
+Number of zeros for product_funds in the REAL CASE: 686056
+Number of zeros for product_funds in the PREDICTION CASE: 693912
+Number of commun zero values for product_funds: 685253
+
+Number of ones for product_funds in the REAL CASE: 12908
+Number of ones for product_funds in the PREDICTION CASE: 5052
+Number of commun one values for product_funds: 4249
+
+
+FOR product_guarantees:
+Number of zeros for product_guarantees in the REAL CASE: 698946
+Number of zeros for product_guarantees in the PREDICTION CASE: 698961
+Number of commun zero values for product_guarantees: 698946
+
+Number of ones for product_guarantees in the REAL CASE: 18
+Number of ones for product_guarantees in the PREDICTION CASE: 3
+Number of commun one values for product_guarantees: 3
+
+
+FOR product_home_account:
+Number of zeros for product_home_account in the REAL CASE: 696208
+Number of zeros for product_home_account in the PREDICTION CASE: 698644
+Number of commun zero values for product_home_account: 696147
+
+Number of ones for product_home_account in the REAL CASE: 2756
+Number of ones for product_home_account in the PREDICTION CASE: 320
+Number of commun one values for product_home_account: 259
+
+
+FOR product_junior_account:
+Number of zeros for product_junior_account in the REAL CASE: 692297
+Number of zeros for product_junior_account in the PREDICTION CASE: 689148
+Number of commun zero values for product_junior_account: 689135
+
+Number of ones for product_junior_account in the REAL CASE: 6667
+Number of ones for product_junior_account in the PREDICTION CASE: 9816
+Number of commun one values for product_junior_account: 6654
+
+
+FOR product_loans:
+Number of zeros for product_loans in the REAL CASE: 697294
+Number of zeros for product_loans in the PREDICTION CASE: 698822
+Number of commun zero values for product_loans: 697257
+
+Number of ones for product_loans in the REAL CASE: 1670
+Number of ones for product_loans in the PREDICTION CASE: 142
+Number of commun one values for product_loans: 105
+
+
+FOR product_long_term_deposits:
+Number of zeros for product_long_term_deposits in the REAL CASE: 668566
+Number of zeros for product_long_term_deposits in the PREDICTION CASE: 679975
+Number of commun zero values for product_long_term_deposits: 664530
+
+Number of ones for product_long_term_deposits in the REAL CASE: 30398
+Number of ones for product_long_term_deposits in the PREDICTION CASE: 18989
+Number of commun one values for product_long_term_deposits: 14953
+
+
+FOR product_mas_particular_account:
+Number of zeros for product_mas_particular_account in the REAL CASE: 693007
+Number of zeros for product_mas_particular_account in the PREDICTION CASE: 690450
+Number of commun zero values for product_mas_particular_account: 687428
+
+Number of ones for product_mas_particular_account in the REAL CASE: 5957
+Number of ones for product_mas_particular_account in the PREDICTION CASE: 8514
+Number of commun one values for product_mas_particular_account: 2935
+
+
+FOR product_medium_term_deposits:
+Number of zeros for product_medium_term_deposits in the REAL CASE: 697802
+Number of zeros for product_medium_term_deposits in the PREDICTION CASE: 698852
+Number of commun zero values for product_medium_term_deposits: 697785
+
+Number of ones for product_medium_term_deposits in the REAL CASE: 1162
+Number of ones for product_medium_term_deposits in the PREDICTION CASE: 112
+Number of commun one values for product_medium_term_deposits: 95
+
+
+FOR product_mortgage:
+Number of zeros for product_mortgage in the REAL CASE: 694821
+Number of zeros for product_mortgage in the PREDICTION CASE: 698410
+Number of commun zero values for product_mortgage: 694637
+
+Number of ones for product_mortgage in the REAL CASE: 4143
+Number of ones for product_mortgage in the PREDICTION CASE: 554
+Number of commun one values for product_mortgage: 370
+
+
+FOR product_particular_account:
+Number of zeros for product_particular_account in the REAL CASE: 610508
+Number of zeros for product_particular_account in the PREDICTION CASE: 601083
+Number of commun zero values for product_particular_account: 572767
+
+Number of ones for product_particular_account in the REAL CASE: 88456
+Number of ones for product_particular_account in the PREDICTION CASE: 97881
+Number of commun one values for product_particular_account: 60140
+
+
+FOR product_particular_plus_account:
+Number of zeros for product_particular_plus_account in the REAL CASE: 668801
+Number of zeros for product_particular_plus_account in the PREDICTION CASE: 678461
+Number of commun zero values for product_particular_plus_account: 660903
+
+Number of ones for product_particular_plus_account in the REAL CASE: 30163
+Number of ones for product_particular_plus_account in the PREDICTION CASE: 20503
+Number of commun one values for product_particular_plus_account: 12605
+
+
+FOR product_payroll:
+Number of zeros for product_payroll in the REAL CASE: 661159
+Number of zeros for product_payroll in the PREDICTION CASE: 681253
+Number of commun zero values for product_payroll: 655094
+
+Number of ones for product_payroll in the REAL CASE: 37805
+Number of ones for product_payroll in the PREDICTION CASE: 17711
+Number of commun one values for product_payroll: 11646
+
+
+FOR product_payroll_account:
+Number of zeros for product_payroll_account in the REAL CASE: 643674
+Number of zeros for product_payroll_account in the PREDICTION CASE: 665066
+Number of commun zero values for product_payroll_account: 632773
+
+Number of ones for product_payroll_account in the REAL CASE: 55290
+Number of ones for product_payroll_account in the PREDICTION CASE: 33898
+Number of commun one values for product_payroll_account: 22997
+
+
+FOR product_savings_account:
+Number of zeros for product_savings_account in the REAL CASE: 698891
+Number of zeros for product_savings_account in the PREDICTION CASE: 698963
+Number of commun zero values for product_savings_account: 698891
+
+Number of ones for product_savings_account in the REAL CASE: 73
+Number of ones for product_savings_account in the PREDICTION CASE: 1
+Number of commun one values for product_savings_account: 1
+
+
+FOR product_second_pensions:
+Number of zeros for product_second_pensions in the REAL CASE: 657387
+Number of zeros for product_second_pensions in the PREDICTION CASE: 680844
+Number of commun zero values for product_second_pensions: 651414
+
+Number of ones for product_second_pensions in the REAL CASE: 41577
+Number of ones for product_second_pensions in the PREDICTION CASE: 18120
+Number of commun one values for product_second_pensions: 12147
+
+
+FOR product_securities:
+Number of zeros for product_securities in the REAL CASE: 681992
+Number of zeros for product_securities in the PREDICTION CASE: 692340
+Number of commun zero values for product_securities: 680729
+
+Number of ones for product_securities in the REAL CASE: 16972
+Number of ones for product_securities in the PREDICTION CASE: 6624
+Number of commun one values for product_securities: 5361
+
+
+FOR product_short_term_deposits:
+Number of zeros for product_short_term_deposits in the REAL CASE: 697391
+Number of zeros for product_short_term_deposits in the PREDICTION CASE: 698263
+Number of commun zero values for product_short_term_deposits: 696843
+
+Number of ones for product_short_term_deposits in the REAL CASE: 1573
+Number of ones for product_short_term_deposits in the PREDICTION CASE: 701
+Number of commun one values for product_short_term_deposits: 153
+
+
+FOR product_taxes:
+Number of zeros for product_taxes in the REAL CASE: 661806
+Number of zeros for product_taxes in the PREDICTION CASE: 684553
+Number of commun zero values for product_taxes: 658969
+
+Number of ones for product_taxes in the REAL CASE: 37158
+Number of ones for product_taxes in the PREDICTION CASE: 14411
+Number of commun one values for product_taxes: 11574

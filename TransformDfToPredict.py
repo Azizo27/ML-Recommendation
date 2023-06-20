@@ -23,7 +23,8 @@ def TransformDfToPredict(DfToPredict):
 
     for column in column_names_df:
         if column not in train_features_name:
-            del dataToPredict[column]
+            if column in dataToPredict:
+                del dataToPredict[column]
 
     for column in train_features_name:
         if column not in column_names_df:
