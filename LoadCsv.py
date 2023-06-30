@@ -3,6 +3,9 @@ from CleaningData import CleaningData
 import pandas as pd
 import numpy as np
 import os
+import calendar
+from DisplayInformation import DisplayInformation
+
 
 #This function loads the data ENTIRELY from a csv. Also, It can be filtered by date May/June. Also, It can copy to a new csv file by renaming the columns
 def LoadCsv(file_name, new_file_name):
@@ -30,3 +33,19 @@ def LoadCsv(file_name, new_file_name):
         df.to_csv(new_file_name, index=False)
         
     return df
+
+
+# The file_name must be the original train dataset BUT Cleaned and renamed
+def LoadPerMonth(file_name, month_name):
+    month_number = str(list(calendar.month_name).index(month_name)).zfill(2)
+    chunksize = 100000
+    chunks = []
+    
+    print("Loading data...")
+    for chunk in pd.read_csv(file_name, low_memory=False, chunksize=chunksize):
+        filtered_chunk = chunk[chunk['date'].astype(str).str.startswith('2015-{}-'.format(month_number))]
+        chunks.append(filtered_chunk)
+
+    print("Data loaded. Concatenating chunks...")
+    df = pd.concat(chunks, ignore_index=True)
+    return df 

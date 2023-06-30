@@ -5,13 +5,15 @@ import pickle
 import pandas as pd
 import numpy as np
 import os
-from SplitWrapper import splitting_dataset
+from SplitWrapper import splitting_dataset, reset_first_time
+from LoadCsv import LoadPerMonth
+import gzip
 
 # Load dataset
-def CreatingModelProduct(df, model_file_name, features, target):
+def CreatingModelProduct(df, features, target, month):
     print("Starting...")
 
-    X_train, X_test, y_train, y_test = splitting_dataset(df, features, target, 0.2, 42)
+    X_train, X_test, y_train, y_test = splitting_dataset(df, features, target, 0.2, 42, month)
 
     print("Fitting...")
     model = RandomForestClassifier()
@@ -21,7 +23,38 @@ def CreatingModelProduct(df, model_file_name, features, target):
     accuracy = accuracy_score(y_test, y_pred)
     print("Accuracy:", accuracy)
     
-    print("Saving the trained model to a file...")
-    with open(os.path.join(target, model_file_name), "wb") as file:
+    with open(os.path.join(month, 'Accuracy.txt'), 'a') as file:
+        file.write('\n'+ target + ' accuracy: ' + str(accuracy) + '\n')
+    
+    print("Saving the trained model to a compressed file...")
+    with gzip.open(os.path.join(month, target + '.pkl.gz'), "wb") as file:
         pickle.dump(model, file)
   
+  
+
+# This function creates a subfolders for each montb. Then, it creates all 24 models in each of these subfolders.
+# This function is 'skipped' if the subfolders already exist.
+def CreatingAllMonthModels(all_products):
+    all_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    
+    features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
+    
+    train_file_name = "Cleaned_Renamed_train_ver2.csv" 
+    
+    
+    for month in all_months:
+        if not os.path.exists(month):
+            print("Creating Subfolders for the month "+month +" ...")
+            os.makedirs(month, exist_ok=True)
+            
+            df = LoadPerMonth(train_file_name, month) 
+            for target in all_products:
+                CreatingModelProduct(df, features, target, month)
+            
+            print("Resetting the first time...")
+            reset_first_time()
+            
+        
+        else:
+            print("the folder "+month+" already exists")
+    

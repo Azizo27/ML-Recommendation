@@ -6,7 +6,7 @@ import os
 # Define a global variable to store the transformed DataFrame
 stored_dataToPredict = None
 
-def TransformDfToPredict(DfToPredict):
+def TransformDfToPredict(DfToPredict, month):
     global stored_dataToPredict
 
     # Return the stored DataFrame if it exists
@@ -16,7 +16,7 @@ def TransformDfToPredict(DfToPredict):
     # Perform the transformation on the first call
     dataToPredict = EncodingAllFeatures(DfToPredict)
     Features_filename = 'FittedFeaturesofModels.txt'
-    with open(Features_filename, 'r') as file:
+    with open(os.path.join(month, Features_filename), 'r') as file:
         train_features_name = file.read().split(',')
 
     column_names_df = dataToPredict.columns.tolist()

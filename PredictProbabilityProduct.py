@@ -7,23 +7,17 @@ import pandas as pd
 import numpy as np
 import pickle
 import os
+import gzip
 
 
-def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, FileToCreateModel):
+def PredictProbabilityProduct(dfToPredict, target, month):
     
-    #If the model does not exist, create it
-    if not os.path.exists(target):
-        print("Creating Subfolders for the target "+target +" ...")
-        os.makedirs(target, exist_ok=True)
-        print("Model does not exist, creating it...")
-        dfForTraining = LoadCsv(FileToCreateModel, FileToCreateModel)
-        CreatingModelProduct(dfForTraining, model_file_name, features, target)
-    
-    print("Loading model "+model_file_name+ "...")
+    print("Loading model of "+target+ "...")
 
-    dataToPredict = TransformDfToPredict(dfToPredict)
+    dataToPredict = TransformDfToPredict(dfToPredict, month)
     
-    with open(os.path.join(target, model_file_name), "rb") as file:
+    print("Loading the trained model from the compressed file...")
+    with gzip.open(os.path.join(month, target + '.pkl.gz'), "rb") as file:
         model = pickle.load(file)
 
     
@@ -42,10 +36,8 @@ def PredictProbabilityProduct(dfToPredict, features, target, model_file_name, Fi
         #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
         dataToPredict[target] = 1 - probabilities[:, 0]
     
-    dataToPredict["customer_code"] = dfToPredict.loc[dataToPredict.index, "customer_code"]
     
-    df_selected = dataToPredict[['customer_code', target]]
-    df_selected.to_csv(os.path.join(target, 'prediction_'+target+'.csv'), index=False)
+    return dataToPredict[target]
 
 
 
