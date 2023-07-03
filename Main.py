@@ -18,7 +18,13 @@ if __name__ == '__main__':
         "product_loans", "product_taxes", "product_credit_card", "product_securities",
         "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
     
-    CreatingAllMonthModels(all_products)
+    all_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    
+    features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
+    
+    train_file_name = "Cleaned_Renamed_train_ver2.csv" 
+    
+    CreatingAllMonthModels(all_products, all_months, features, train_file_name)
     
     dfTopredict = LoadCsv("Cleaned_Renamed_test_May2016.csv", "Cleaned_Renamed_test_May2016.csv")
     

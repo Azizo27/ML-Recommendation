@@ -34,13 +34,7 @@ def CreatingModelProduct(df, features, target, month):
 
 # This function creates a subfolders for each montb. Then, it creates all 24 models in each of these subfolders.
 # This function is 'skipped' if the subfolders already exist.
-def CreatingAllMonthModels(all_products):
-    all_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    
-    features = ['age', 'gross_income', 'customer_seniority', 'customer_relation_type_at_beginning_of_month', 'segmentation', 'gender']
-    
-    train_file_name = "Cleaned_Renamed_train_ver2.csv" 
-    
+def CreatingAllMonthModels(all_products, all_months, features, train_file_name):
     
     for month in all_months:
         if not os.path.exists(month):
