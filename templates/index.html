@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Data Input Example</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Data Input Example</h1>
     <form action="{{ url_for('process') }}" method="post">
+      <label for="month">Month Selected:</label>
+      <select name="month" id="month" required>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+      <br /><br />
 
-        <label for="month">Month Selected:</label>
-        <select name="month" id="month" required>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-        </select>
-        <br><br>
+      <label for="gender">Gender:</label>
+      <select name="gender" id="gender" required>
+        <option value="H">Male</option>
+        <option value="V">Female</option>
+        <option value="U">Other</option>
+      </select>
 
+      <br /><br />
+      <label for="segmentation">Segmentation:</label>
+      <select name="segmentation" id="segmentation" required>
+        <option value="01 - TOP">01 - TOP</option>
+        <option value="02 - PARTICULARES">02 - PARTICULARES</option>
+        <option value="03 - UNIVERSITARIO">03 - UNIVERSITARIO</option>
+      </select>
 
-        <label for="gender">Gender:</label>
-        <select name="gender" id="gender" required>
-            <option value="H">Male</option>
-            <option value="V">Female</option>
-            <option value="U">Other</option>
-        </select>
+      <br /><br />
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
+      <br /><br />
 
-        <br><br>
-        <label for="segmentation">Segmentation:</label>
-        <select name="segmentation" id="segmentation" required>
-            <option value="01 - TOP">01 - TOP</option>
-            <option value="02 - PARTICULARES">02 - PARTICULARES</option>
-            <option value="03 - UNIVERSITARIO">03 - UNIVERSITARIO</option>
-        </select>
+      <label for="gross_income">gross_income:</label>
+      <input type="number" name="gross_income" step="any" id="gross_income" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
 
-        <br><br>
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required>
-        <br><br>
+      <br /><br />
 
-        <label for="gross_income">gross_income:</label>
-        <input type="number" name="gross_income" step="any" id="gross_income" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required>
+      <label for="customer_relation_type_at_beginning_of_month">customer_relation_type_at_beginning_of_month:</label>
+      <select name="customer_relation_type_at_beginning_of_month" id="customer_relation_type_at_beginning_of_month" required>
+        <option value="A">A</option>
+        <option value="I">I</option>
+        <option value="P">P</option>
+        <option value="U">U</option>
+        <option value="R">R</option>
+      </select>
+      <br /><br />
+      <label for="customer_seniority">customer_seniority:</label>
+      <input type="number" name="customer_seniority" step="any" id="customer_seniority" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
+      <br /><br />
 
-        <br><br>
-
-        <label for="customer_relation_type_at_beginning_of_month">customer_relation_type_at_beginning_of_month:</label>
-        <select name="customer_relation_type_at_beginning_of_month" id="customer_relation_type_at_beginning_of_month" required>
-            <option value="A">A</option>
-            <option value="I">I</option>
-            <option value="P">P</option>
-            <option value="U">U</option>
-            <option value="R">R</option>
-        </select>
-        <br><br>
-        <label for="customer_seniority">customer_seniority:</label>
-        <input type="number" name="customer_seniority" step="any" id="customer_seniority" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?"  required>
-        <br><br>
-
-
-
-        <input type="submit" value="Send">
+      <input type="submit" onclick="startProcess()" value="Send" />
     </form>
-</body>
+  </body>
 </html>

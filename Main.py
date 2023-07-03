@@ -1,9 +1,7 @@
 from LoadCsv import LoadCsv
 from PredictProbabilityProduct import PredictProbabilityProduct
 from CreatingModelProduct import CreatingAllMonthModels
-from Useless.MergePredictions import MergePredictions
 from RankRecommendation import RankRecommendation
-from DisplayInformation import DisplayInformation
 import pandas as pd
 import numpy as np
 
