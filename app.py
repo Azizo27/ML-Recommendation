@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 from PredictProbabilityProduct import PredictProbabilityProduct
 import threading
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 result = None
 calculation_complete = threading.Event()
@@ -36,7 +36,6 @@ def calculate_prediction(month, age, gross_income, customer_seniority, customer_
         df[target] = target_column
         print("Done with", target)
 
-    #result = df.to_html(index=False, classes='dataframe')
     result = df.to_html()
     calculation_complete.set()  # Set the event to indicate that the calculation is complete
 
