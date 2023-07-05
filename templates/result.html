@@ -2,15 +2,20 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Result Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-    
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    
-</head>
-<body class="bg-dark text-light">
-    <h1>Result</h1>
-    {{ result|safe }}
-</body>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}" />
+  </head>
+  <body class="bg-dark text-light">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <h3 class="form-title">Result:</h3>
+          {{ result|safe }}
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

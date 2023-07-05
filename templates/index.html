@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Data Input Example</title>
+    <title>Input Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}" />
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   </head>
@@ -13,77 +11,98 @@
     <div class="form-holder">
       <div class="form-content">
         <div class="form-items">
-          <h3 class="form-title">Data Input Example</h3>
+          <h3 class="form-title">Input</h3>
           <form action="{{ url_for('process') }}" method="post">
-            <div class="row">
-              <div class="col-md-6">
-                <label for="month">Month Selected:</label>
-                <select class="form-select" name="month" id="month" required>
-                  <option value="January">January</option>
-                  <option value="February">February</option>
-                  <option value="March">March</option>
-                  <option value="April">April</option>
-                  <option value="May">May</option>
-                  <option value="June">June</option>
-                  <option value="July">July</option>
-                  <option value="August">August</option>
-                  <option value="September">September</option>
-                  <option value="October">October</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="gender">Gender:</label>
-                <select class="form-select" name="gender" id="gender" required>
-                  <option value="H">Male</option>
-                  <option value="V">Female</option>
-                  <option value="U">Other</option>
-                </select>
-              </div>
-            </div>
+            <table>
+              <tr>
+                <td>
+                  <img src="{{ url_for('static', filename='images/calendar.png') }}" alt="Month Icon" class="image-size">
+                </td>
+                <td>
+                  <select class="form-select" name="month" id="month" required>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="gender">Gender:</label>
+                </td>
+                <td>
+                  <select name="gender" id="gender" required>
+                    <option value="H">Male</option>
+                    <option value="V">Female</option>
+                    <option value="U">Other</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="segmentation">Segmentation:</label>
+                </td>
+                <td>
+                  <select class="form-select" name="segmentation" id="segmentation" required>
+                    <option value="01 - TOP">01 - TOP</option>
+                    <option value="02 - PARTICULARES">02 - PARTICULARES</option>
+                    <option value="03 - UNIVERSITARIO">03 - UNIVERSITARIO</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="age">Age:</label>
+                </td>
+                <td>
+                  <input class="form-control" type="number" name="age" id="age" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="customer_seniority">Customer Seniority:</label>
+                </td>
+                <td>
+                  <input class="form-control" type="number" name="customer_seniority" id="customer_seniority" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="customer_relation_type_at_beginning_of_month">Customer Relation:</label>
+                </td>
+                <td>
+                  <select class="form-select" name="customer_relation_type_at_beginning_of_month" id="customer_relation_type_at_beginning_of_month" required>
+                    <option value="A">A</option>
+                    <option value="I">I</option>
+                    <option value="P">P</option>
+                    <option value="U">U</option>
+                    <option value="R">R</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="gross_income">gross_income:</label>
+                </td>
+                <td>
+                  <input class="form-control" type="number" step="any" name="gross_income" id="gross_income" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
+                </td>
+              </tr>
+            </table>
+
+            <br />
 
             <div class="row">
-              <div class="col-md-6">
-                <label for="segmentation">Segmentation:</label>
-                <select class="form-select" name="segmentation" id="segmentation" required>
-                  <option value="01 - TOP">01 - TOP</option>
-                  <option value="02 - PARTICULARES">02 - PARTICULARES</option>
-                  <option value="03 - UNIVERSITARIO">03 - UNIVERSITARIO</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="age">Age:</label>
-                <input class="form-control" type="number" name="age" id="age" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label for="gross_income">Gross Income:</label>
-                <input class="form-control" type="number" name="gross_income" step="any" id="gross_income" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
-              </div>
-              <div class="col-md-6">
-                <label for="customer_relation_type_at_beginning_of_month">Customer Relation Type at Beginning of Month:</label>
-                <select class="form-select" name="customer_relation_type_at_beginning_of_month" id="customer_relation_type_at_beginning_of_month" required>
-                  <option value="A">A</option>
-                  <option value="I">I</option>
-                  <option value="P">P</option>
-                  <option value="U">U</option>
-                  <option value="R">R</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <label for="customer_seniority">Customer Seniority:</label>
-                <input class="form-control" type="number" name="customer_seniority" step="any" id="customer_seniority" pattern="[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
+              <div class="form-group">
                 <button class="btn btn-primary" type="submit">Send</button>
               </div>
             </div>
