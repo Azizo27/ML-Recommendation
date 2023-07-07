@@ -13,11 +13,16 @@
       <div class="form-content">
         <div class="form-items">
           <div class="container">
-            <img src="{{ url_for('static', filename='images/result.png') }}" alt="Result Icon" class="image-size">
-            <h3>Result</h3>
+            <img src="{{ url_for('static', filename = 'images/result.png') }}" alt="Result Icon" class="image-size" />
+            <h3>Recommendation Result</h3>
           </div>
-          <br>
-          {{ result|safe }}
+          {% for column in result.columns %}
+              <div class="row">
+                <div class="col">
+                  <strong>{{ column }}</strong>: {{ result[column].iloc[0]|safe }}
+                </div>
+              </div>
+          {% endfor %}
         </div>
       </div>
     </div>
