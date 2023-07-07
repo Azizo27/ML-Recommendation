@@ -12,8 +12,6 @@ html,
 body {
     height: 100%;
     background-color: #152733;
-    background-attachment: fixed;
-    overflow: hidden;
 }
 
 .form-holder {
@@ -37,7 +35,7 @@ body {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    padding: 40px;
+    padding: 30px;
 }
 
 .form-content .form-items {

@@ -5,7 +5,7 @@ function checkResult() {
             if (data.result_available) {
                 window.location.href = '/result';  // Redirect to the result page
             } else {
-                setTimeout(checkResult, 1000);  // Check again after 1 second
+                setTimeout(checkResult, 10000);  // Check again after 10 second
             }
         });
 }
