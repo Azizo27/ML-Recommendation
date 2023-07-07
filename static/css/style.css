@@ -12,6 +12,7 @@ html,
 body {
     height: 100%;
     background-color: #152733;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -36,7 +37,7 @@ body {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    padding: 60px;
+    padding: 40px;
 }
 
 .form-content .form-items {
@@ -61,7 +62,7 @@ body {
     margin-bottom: 5px;
 }
 
-.form-content h3.form-title {
+.form-content h3.form-title{
     margin-bottom: 30px;
 }
 
@@ -85,7 +86,7 @@ body {
 .form-content input[type='email'],
 .form-content select {
     width: 100%;
-    padding: 9px 20px;
+    padding: 9px 10px;
     text-align: left;
     border: 0;
     outline: 0;
@@ -96,7 +97,7 @@ body {
     color: #8d8d8d;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    margin-top: 16px;
+    margin-top: 11px;
 }
 
 .btn-primary {
@@ -159,13 +160,26 @@ table {
 }
 
 th, td {
-    border: 1px solid black;
+    border: 1px solid gray;
     padding: 8px;
     text-align: center; 
     vertical-align: middle;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .image-size {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
+}
+
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    margin-right: 10px; /* Adjust the margin as needed */
 }

@@ -32,7 +32,7 @@ def PredictProbabilityProduct(dfToPredict, target, month):
     if probabilities.shape[1] > 1:
         dataToPredict[target] = probabilities[:, 1]
     else:
-        # If there is only one column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
+        # If there is only one value in the column, assign (1 - probabilities[:, 0]) to 'probability_buyed'
         #With this operation, probability_buyed will be equal to 1 if the client bought the product and 0 if he didn't
         dataToPredict[target] = 1 - probabilities[:, 0]
     
