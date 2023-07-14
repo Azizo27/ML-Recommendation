@@ -9,7 +9,7 @@ from SplitWrapper import splitting_dataset, reset_first_time
 from LoadCsv import LoadPerMonth
 import gzip
 
-# Load dataset
+#Creating a model for a product in a specific month
 def CreatingModelProduct(df, features, target, month):
     print("Starting...")
 
@@ -32,8 +32,11 @@ def CreatingModelProduct(df, features, target, month):
   
   
 
-# This function creates a subfolders for each montb. Then, it creates all 24 models in each of these subfolders.
-# This function is 'skipped' if the subfolders already exist.
+# This function creates a subfolders for each month. 
+# Then, it creates all 24 models in each of these subfolders.
+# For each month, this function takes about 1 hour
+
+# If you want to see the used parameters, go to main.py file
 def CreatingAllMonthModels(all_products, all_months, features, train_file_name):
     
     for month in all_months:

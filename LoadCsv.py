@@ -7,18 +7,18 @@ import calendar
 from DisplayInformation import DisplayInformation
 
 
-#This function loads the data ENTIRELY from a csv. Also, It can be filtered by date May/June. Also, It can copy to a new csv file by renaming the columns
+#This function takes two parameters (file_name and new_file_name) to create a new cleaned/renamed csv file. then, it returns it as a dataframe.
+#In our case, file_name is the original train dataset 'train_ver2.csv',
+# While new_file_name is the name we want to give to the cleaned/Renamed csv file that will be created.
+
+#If both files already exist, the function will return the dataframe from the csv file that correspond to file_name.
+
 def LoadCsv(file_name, new_file_name):
     chunksize = 100000
     chunks = []
     
     print("Loading data...")
     for chunk in pd.read_csv(file_name, low_memory=False, chunksize=chunksize):
-        '''
-        #TO FILTER BY DATE (NB: YOU MUST DELETE THE NEXT LINE)
-        filtered_chunk = chunk[chunk['fecha_dato'].astype(str).str.startswith(('2015-06'))]
-        chunks.append(filtered_chunk)
-        '''
         chunks.append(chunk)
 
     print("Data loaded. Concatenating chunks...")
