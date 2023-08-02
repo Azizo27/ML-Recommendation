@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
-from LoadCsv import LoadCsv
 import time
+from chunking import custom_chunking
+
+
 
 def exponential_smoothing_with_date(series, alpha):
     result = np.empty(len(series))
@@ -22,21 +24,6 @@ def apply_exponential_smoothing(df_chunk, columns, alpha):
             **smoothed_values
         })
     return pd.DataFrame(final_rows)
-
-# Custom chunking function to ensure complete groups are included in each chunk
-def custom_chunking(df, chunk_size):
-    idx = 0
-    while idx < len(df):
-        group_end = idx + chunk_size
-        if group_end >= len(df):
-            yield df.iloc[idx:]
-            break
-        while group_end < len(df) and df['customer_code'].iloc[group_end] == df['customer_code'].iloc[idx]:
-            group_end += 1
-        yield df.iloc[idx:group_end]
-        idx = group_end
-
-
 
 
 def PredictUsingHistorical(df, all_columns):
@@ -64,15 +51,5 @@ def PredictUsingHistorical(df, all_columns):
     final_df = pd.concat(final_df_list, ignore_index=True)
     final_df = final_df.drop_duplicates(subset='customer_code')
 
-    final_df.to_csv('pred_final.csv', index=False)
+    return final_df
 
-
-df= LoadCsv("Cleaned_Renamed_train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
-all_columns = [ "product_savings_account", "product_guarantees", "product_current_accounts",
-        "product_derivada_account", "product_payroll_account", "product_junior_account",
-        "product_mas_particular_account", "product_particular_account", "product_particular_plus_account",
-        "product_short_term_deposits", "product_medium_term_deposits", "product_long_term_deposits",
-        "product_e_account", "product_funds", "product_mortgage", "product_first_pensions",
-        "product_loans", "product_taxes", "product_credit_card", "product_securities",
-        "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
-PredictUsingHistorical(df, all_columns)

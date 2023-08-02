@@ -1,11 +1,15 @@
 import pandas as pd
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from PredictProbabilityProduct import PredictProbabilityProduct
+from LoadCsv import LoadCsv
 import threading
+import os
+import signal
 
 app = Flask(__name__, static_folder='static')
 
 result = None
+df = None
 calculation_complete = threading.Event()
 
 
@@ -14,8 +18,39 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/calculate_prediction', methods=['POST'])
-def calculate_prediction(month, age, gross_income, customer_seniority, customer_relation_type, segmentation, gender):
+@app.route('/prediction', methods=['GET', 'POST'])
+def prediction():
+    message = ""
+    show_send_button = False
+        
+    if request.method == 'POST':
+        customer_id = int(request.form['customer_id'])
+        
+        global df
+        if df is None:
+            df = LoadCsv("Cleaned_Renamed_train_ver2.csv", "Cleaned_Renamed_train_ver2.csv")
+            
+        # Convert 'customer_code' column to int (if it's not already)
+        if df['customer_code'].dtype != int:
+            df['customer_code'] = df['customer_code'].astype(int)
+
+        if customer_id in df['customer_code'].unique():
+            message = "Customer ID exists in the DataFrame."
+            show_send_button = True
+        else:
+            print("in else")
+            message = "Customer ID does not exist in the DataFrame."
+
+    return render_template('prediction.html', message=message, show_send_button=show_send_button)
+
+
+@app.route('/recommendation')
+def recommendation():
+    return render_template('recommendation.html')
+
+
+@app.route('/calculate_recommendation', methods=['POST'])
+def calculate_recommendation(month, age, gross_income, customer_seniority, customer_relation_type, segmentation, gender):
     global result
 
     # Create a dataframe with the sent elements
@@ -75,8 +110,8 @@ def check_result():
 
 
 # Modify the /process route to include the redirect to /result
-@app.route('/process', methods=['POST'])
-def process():
+@app.route('/process_recommendation', methods=['POST'])
+def process_recommendation():
     global result
 
     month = request.form['month']
@@ -88,7 +123,7 @@ def process():
     gender = request.form['gender']
 
     calculation_complete.clear()  # Clear the event before starting the new thread
-    threading.Thread(target=calculate_prediction, args=(month, age, gross_income, customer_seniority,
+    threading.Thread(target=calculate_recommendation, args=(month, age, gross_income, customer_seniority,
                                                         customer_relation_type, segmentation, gender)).start()
 
     return redirect(url_for('show_result'))  # Redirect to the show_result route

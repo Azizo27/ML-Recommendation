@@ -3,121 +3,16 @@
   <head>
     <title>Recommendation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}" />
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename = 'javascript/index.js') }}"></script>
   </head>
   <body class="bg-dark text-light">
     <div class="form-holder">
       <div class="form-content">
         <div class="form-items">
-          <form action="{{ url_for('process') }}" method="post">
-            <table>
-              <tr>
-                <td title="Select for which month you want the prediction">
-                  <img src="{{ url_for('static', filename = 'images/calendar.png') }}" alt="Month Icon" class="image-size" />
-                </td>
-                <td>
-                  <select class="form-select" name="month" id="month" required>
-                    <option value="January">January</option>
-                    <option value="February">February</option>
-                    <option value="March">March</option>
-                    <option value="April">April</option>
-                    <option value="May">May</option>
-                    <option value="June">June</option>
-                    <option value="July">July</option>
-                    <option value="August">August</option>
-                    <option value="September">September</option>
-                    <option value="October">October</option>
-                    <option value="November">November</option>
-                    <option value="December">December</option>
-                  </select>
-                </td>
-              </tr>
-            </table>
-            <br />
-            <div class="container">
-              <img src="{{ url_for('static', filename = 'images/customer-data.png') }}" alt="Customer Icon" class="image-size" />
-              <h3>Customer Data</h3>
-            </div>
-            <br />
-            <table>
-              <tr>
-                <td title="Select the gender of the customer">
-                  <img src="{{ url_for('static', filename = 'images/gender.png') }}" alt="Gender Icon" class="image-size" />
-                </td>
-                <td>
-                  <select name="gender" id="gender" required>
-                    <option value="H">Male</option>
-                    <option value="V">Female</option>
-                    <option value="U">Other</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td title="Select the profile of the customer">
-                  <img src="{{ url_for('static', filename = 'images/segmentation.png') }}" alt="Segmentation Icon" class="image-size" />
-                </td>
-                <td>
-                  <select class="form-select" name="segmentation" id="segmentation" required>
-                    <option value="01 - TOP">VIP</option>
-                    <option value="02 - PARTICULARES">Individuals</option>
-                    <option value="03 - UNIVERSITARIO">College Graduated</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td title="Select the age of the customer">
-                  <img src="{{ url_for('static', filename = 'images/age.png') }}" alt="Age Icon" class="image-size" />
-                </td>
-                <td>
-                  <input class="form-control" type="number" name="age" id="age" min="1" max="130" oninput="validateAge(this)" required />
-                  <span id="ageError" style="color: red;"></span>
-                </td>
-              </tr>
-              <tr>
-                <td title="Select the customer seniority (in months)">
-                  <img src="{{ url_for('static', filename = 'images/seniority.png') }}" alt="Seniority Icon" class="image-size" />
-                </td>
-                <td>
-                  <input class="form-control" type="number" name="customer_seniority" id="customer_seniority" min="0" oninput="validateSeniority(this)" required />
-                  <span id="seniorityError" style="color: red;"></span>
-                </td>
-              </tr>
-              <tr>
-                <td title="Select the customer relation type at the beginning of the month">
-                  <img src="{{ url_for('static', filename = 'images/relation.png') }}" alt="Relation Icon" class="image-size" />
-                </td>
-                <td>
-                  <select class="form-select" name="customer_relation_type_at_beginning_of_month" id="customer_relation_type_at_beginning_of_month" required>
-                    <option value="A">Active</option>
-                    <option value="I">Inactive</option>
-                    <option value="P">Former Customer</option>
-                    <option value="R">Potential</option>
-                    <option value="U">Undefined</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td title="Select the gross income of the household">
-                  <img src="{{ url_for('static', filename = 'images/gross_income.png') }}" alt="Gross Income Icon" class="image-size" />
-                </td>
-                <td>
-                  <input class="form-control" type="number" step="any" name="gross_income" id="gross_income" min="0" oninput="validateGrossIncome(this)" required />
-                  <span id="gross_incomeError" style="color: red;"></span>
-                </td>
-              </tr>
-            </table>
-
-            <br />
-
-            <div class="row">
-              <div class="form-group">
-                <button class="btn btn-primary" type="submit">Send</button>
-              </div>
-            </div>
-          </form>
+          <h3 class="form-title"> Choose which model you want :</h3>
+          <button style="--clr:#39FF14" onclick="window.location.href='/prediction'" ><span>Prediction</span><i></i></button>
+          <button style="--clr:#FF44CC" onclick="window.location.href='/recommendation'" ><span>Recommendation</span><i></i></button>
         </div>
       </div>
     </div>

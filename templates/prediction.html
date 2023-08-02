@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}" />
+
+    <script src="{{ url_for('static', filename = 'javascript/prediction.js') }}"></script>
+
+
+  </head>
+  <body class="bg-dark text-light">
+    <div class="form-holder">
+      <div class="form-content">
+        <div class="form-items">
+          <div class="container">
+            <div>
+            <img src="{{ url_for('static', filename = 'images/customer-code.png') }}" alt="Customer Code" class="image-size" />
+            <h3>Customer Id</h3>
+            </div>
+            <div>
+            <form method="post" onsubmit="showSpinner()">
+              <input type="text" id="customer_id" name="customer_id" required />
+              <button style="--clr:#39FF14" type="submit" id="checkButton" ><span>Check</span><i></i></button>
+              <div id="spinner"  class="spinner-border" role="status" style="display: none"></div>
+            </form>
+            <div>
+            <p>{{ message }}</p>
+            {% if show_send_button %}
+            <button style="--clr:#39FF14"><span>Send</span><i></i></button>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
