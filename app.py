@@ -4,7 +4,10 @@ from PredictProbabilityProduct import PredictProbabilityProduct
 from LoadCsv import LoadCsv
 import threading
 import os
+import time
 import signal
+from prediction.calculations import exponential_smoothing_with_date
+
 
 app = Flask(__name__, static_folder='static')
 
@@ -12,6 +15,14 @@ result = None
 df = None
 calculation_complete = threading.Event()
 
+
+all_products=  [ "product_savings_account", "product_guarantees", "product_current_accounts",
+        "product_derivada_account", "product_payroll_account", "product_junior_account",
+        "product_mas_particular_account", "product_particular_account", "product_particular_plus_account",
+        "product_short_term_deposits", "product_medium_term_deposits", "product_long_term_deposits",
+        "product_e_account", "product_funds", "product_mortgage", "product_first_pensions",
+        "product_loans", "product_taxes", "product_credit_card", "product_securities",
+        "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
 
 @app.route('/')
 def index():
@@ -21,7 +32,8 @@ def index():
 @app.route('/prediction', methods=['GET', 'POST'])
 def prediction():
     message = ""
-    show_send_button = False
+    final_df = None
+    valid_customer = False
         
     if request.method == 'POST':
         customer_id = int(request.form['customer_id'])
@@ -35,13 +47,32 @@ def prediction():
             df['customer_code'] = df['customer_code'].astype(int)
 
         if customer_id in df['customer_code'].unique():
-            message = "Customer ID exists in the DataFrame."
-            show_send_button = True
+            final_df = df[df['customer_code'] == customer_id].copy()
+            
+            print("Doing sorting...")
+            final_df = final_df.sort_values(by=['customer_code', 'date'])
+
+
+            alpha = 0.7  # You can adjust this value based on your preference
+
+            print("Applying exponential smoothing...")
+            # Apply exponential smoothing to the entire DataFrame
+            
+            smoothed_values = {}
+            for col in all_products:
+                smoothed_values[col] = exponential_smoothing_with_date(final_df[col].values, alpha)[-1]
+            final_df= pd.DataFrame({'customer_code': df['customer_code'].iloc[0], **smoothed_values}, index=[0])
+
+            print("Dropping duplicates...")
+            # Drop duplicates based on customer_code
+            final_df = final_df.drop_duplicates(subset='customer_code')
+            
+            final_df.drop(columns=['customer_code'], inplace=True)
+            valid_customer = True
         else:
-            print("in else")
             message = "Customer ID does not exist in the DataFrame."
 
-    return render_template('prediction.html', message=message, show_send_button=show_send_button)
+    return render_template('prediction.html', message=message, valid_customer=valid_customer, result=final_df)
 
 
 @app.route('/recommendation')
@@ -63,14 +94,6 @@ def calculate_recommendation(month, age, gross_income, customer_seniority, custo
         'gender': [gender]
     }
     df = pd.DataFrame(data)
-
-    all_products=  [ "product_savings_account", "product_guarantees", "product_current_accounts",
-        "product_derivada_account", "product_payroll_account", "product_junior_account",
-        "product_mas_particular_account", "product_particular_account", "product_particular_plus_account",
-        "product_short_term_deposits", "product_medium_term_deposits", "product_long_term_deposits",
-        "product_e_account", "product_funds", "product_mortgage", "product_first_pensions",
-        "product_loans", "product_taxes", "product_credit_card", "product_securities",
-        "product_home_account", "product_payroll", "product_second_pensions", "product_direct_debit"]
 
     for target in all_products:
         target_column = PredictProbabilityProduct(df, target, month)

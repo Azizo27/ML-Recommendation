@@ -38,6 +38,7 @@ Note: Make sure you have Python 3.x and pip installed on your system: `python --
 
 1. Start the web application: `flask run`
 2. Go to _http://127.0.0.1:5000/_
+3. Click on Recommendation Button
 3. Choose for which month you want to do prediction
 4. Write the customer data
 5. Click on send button
@@ -49,6 +50,12 @@ Note: Make sure you have Python 3.x and pip installed on your system: `python --
 2. Load a cleaned and renamed version of the dataframe you want to predict
 3. Choose for which month you want to do prediction
 4. Open terminal and run : `python3 main.py`
+
+## BONUS
+
+I added a **prediction** folder that uses the **historical of customers** to do predictions on each one of them.
+
+This features was also added in the Web application.
 
 ## Contributing
 

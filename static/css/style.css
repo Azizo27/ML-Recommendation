@@ -287,7 +287,14 @@ button {
 
 
 
-
-  .section-div {
-    margin-bottom: 40px; /* Adjust this value to control the spacing */
+  .scrollable-content {
+    max-height: 300px; /* Set the desired height here */
+    overflow-y: scroll;
+    scrollbar-width: none; /* Hide the scrollbar on supported browsers (Firefox) */
+    -ms-overflow-style: none; /* Hide the scrollbar on supported browsers (IE and Edge) */
+  }
+  
+  /* Hide the scrollbar on Webkit-based browsers (Chrome, Safari, Opera) */
+  .scrollable-content::-webkit-scrollbar {
+    display: none;
   }
